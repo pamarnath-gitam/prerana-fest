@@ -71,7 +71,7 @@ export default function Hero() {
               <img 
                 src="https://harmless-tapir-303.convex.cloud/api/storage/2cdde29b-96de-40ef-afc4-12e27e3d37f2" 
                 alt="PRERANA 2026" 
-                className="w-auto h-auto max-w-full max-h-[30vh] md:max-h-[40vh] object-contain drop-shadow-2xl"
+                className="w-auto h-auto max-w-full max-h-[20vh] md:max-h-[30vh] object-contain drop-shadow-2xl"
               />
             </div>
           </motion.div>
