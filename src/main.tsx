@@ -15,6 +15,7 @@ const AuthPage = lazy(() => import("./pages/Auth.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 const Register = lazy(() => import("./pages/Register.tsx"));
 const Events = lazy(() => import("./pages/Events.tsx"));
+const Gallery = lazy(() => import("./pages/Gallery.tsx"));
 const Sponsors = lazy(() => import("./pages/Sponsors.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
@@ -68,6 +69,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/events" element={<Events />} />
               <Route path="/events/:category" element={<Events />} />
               <Route path="/events/:category/:slug" element={<Events />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="/sponsors" element={<Sponsors />} />
               <Route path="/sponsors/partner-with-us" element={<Sponsors />} />
               <Route path="/privacy" element={<Privacy />} />
