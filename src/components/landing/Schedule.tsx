@@ -38,9 +38,9 @@ export default function Schedule() {
 
         <Tabs defaultValue="day1" className="max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-3 mb-8">
-            <TabsTrigger value="day1">Day 1 (Mar 15)</TabsTrigger>
-            <TabsTrigger value="day2">Day 2 (Mar 16)</TabsTrigger>
-            <TabsTrigger value="day3">Day 3 (Mar 17)</TabsTrigger>
+            <TabsTrigger value="day1">Day 1 (Jan 23)</TabsTrigger>
+            <TabsTrigger value="day2">Day 2 (Jan 24)</TabsTrigger>
+            <TabsTrigger value="day3">Day 3 (Jan 25)</TabsTrigger>
           </TabsList>
 
           {Object.entries(schedule).map(([day, events]) => (

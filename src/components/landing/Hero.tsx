@@ -14,9 +14,9 @@ export default function Hero() {
   });
 
   useEffect(() => {
-    // Set date to Jan 22, 2026 09:00:00 IST
+    // Set date to Jan 23, 2026 09:00:00 IST
     // IST is UTC+5:30
-    const targetDate = new Date("2026-01-22T09:00:00+05:30").getTime();
+    const targetDate = new Date("2026-01-23T09:00:00+05:30").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -42,7 +42,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        {/* Video Background Placeholder */}
+        {/* Video Background */}
         <div className="absolute inset-0 bg-black/60 z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background z-20" />
         <video 
@@ -52,8 +52,8 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover opacity-50"
         >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-digital-circuit-board-loop-2824-large.mp4" type="video/mp4" />
-          {/* Fallback if video fails or for now */}
+          <source src="https://drive.google.com/uc?export=download&id=1tDH-d3OmHaUR84fHtNy7GzFM47NxZHM1" type="video/mp4" />
+          {/* Fallback if video fails */}
         </video>
         
         {/* Grid Pattern */}
@@ -84,7 +84,7 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-6 mb-12 text-white/80">
             <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-full backdrop-blur-md border border-white/10">
               <Calendar className="w-5 h-5 text-primary" />
-              <span>Jan 22 - Jan 23, 2026</span>
+              <span>Jan 23 - Jan 24, 2026</span>
             </div>
             <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-full backdrop-blur-md border border-white/10">
               <MapPin className="w-5 h-5 text-primary" />

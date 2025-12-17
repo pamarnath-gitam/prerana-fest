@@ -10,11 +10,22 @@ export default function About() {
   return (
     <section id="about" className="py-20 relative overflow-hidden bg-muted/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">More Than a Fest. It's an Experience.</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Prerana 2026 brings together the brightest minds and the most creative souls for two days of innovation, celebration, and rejuvenation.
-          </p>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">WHAT IS PRERANA?</h2>
+          <blockquote className="text-xl md:text-2xl font-light italic text-primary mb-8 max-w-4xl mx-auto">
+            "A festival that doesn't just happen—it evolves, inspires, and sets the stage for tomorrow."
+          </blockquote>
+          <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
+            <p>
+              PRERANA isn't just a fest, it's the heartbeat of GITAM University, Bengaluru. A dazzling fusion of culture, tech, and raw student energy, it has grown into a powerhouse of inspiration. Since day one, PRERANA has been the launchpad where ideas take flight, talents rise, and collaboration transforms into unforgettable experiences.
+            </p>
+            <p>
+              Prerana 2025 continued this legacy with two action-packed days—February 1 & 2—filled with cultural showcases, technical competitions, wellness sessions, workshops, esports battles, and endless opportunities to learn, perform, compete, and connect.
+            </p>
+            <p>
+              This year's fest came alive through the theme: <span className="text-foreground font-semibold">[CURRENT FEST THEME PLACEHOLDER]</span> — a creative compass that encouraged participants to think boldly, break patterns, and embrace new perspectives. From the main stage to the hackathons and from wellness zones to workshops, the theme echoed in every moment of the fest.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -59,7 +70,7 @@ export default function About() {
         </div>
 
         <div className="text-center">
-          <Button variant="link" className="text-lg gap-2" onClick={() => navigate("/schedule")}>
+          <Button variant="link" className="text-lg gap-2" onClick={() => navigate("/#schedule")}>
             View Full Schedule <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
