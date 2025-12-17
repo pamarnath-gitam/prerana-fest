@@ -50,9 +50,11 @@ export default function Hero() {
           muted 
           loop 
           playsInline
+          preload="metadata"
+          poster="https://drive.google.com/thumbnail?id=101cvCeV9auTsb5hHAaZXehF0OyvcQgDP-CGwSxPv1JM&sz=w1920"
           className="w-full h-full object-cover opacity-50"
         >
-          <source src="https://drive.google.com/uc?export=download&id=1tDH-d3OmHaUR84fHtNy7GzFM47NxZHM1" type="video/mp4" />
+          <source src="https://drive.google.com/uc?export=download&id=101cvCeV9auTsb5hHAaZXehF0OyvcQgDP-CGwSxPv1JM" type="video/mp4" />
           {/* Fallback if video fails */}
         </video>
         
