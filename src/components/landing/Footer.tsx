@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 
 export default function Footer() {
   const navigate = useNavigate();
-  const logoUrl = "https://harmless-tapir-303.convex.cloud/api/storage/184e385c-8892-47b6-843e-8e75b561a7ab";
+  const logoUrl = "https://harmless-tapir-303.convex.cloud/api/storage/2cdde29b-96de-40ef-afc4-12e27e3d37f2";
 
   return (
     <footer id="footer" className="bg-card border-t border-border pt-16 pb-8">

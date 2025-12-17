@@ -51,13 +51,13 @@ export default function Hero() {
         {/* Subtle Overlay for text readability */}
         <div className="absolute inset-0 bg-black/20 z-10" />
 
-        {/* Logo Content - Centered in the video area */}
-        <div className="absolute inset-0 z-20 flex items-center justify-center p-4">
+        {/* Logo Content - Positioned at the bottom of the video area */}
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-end p-4 pb-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center w-full h-full justify-center"
+            className="flex flex-col items-center w-full"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 text-white border border-white/20 mb-4 backdrop-blur-md">
               <span className="relative flex h-2 w-2">
@@ -69,9 +69,9 @@ export default function Hero() {
 
             <div className="flex justify-center w-full max-w-4xl px-4">
               <img 
-                src="https://harmless-tapir-303.convex.cloud/api/storage/184e385c-8892-47b6-843e-8e75b561a7ab" 
+                src="https://harmless-tapir-303.convex.cloud/api/storage/2cdde29b-96de-40ef-afc4-12e27e3d37f2" 
                 alt="PRERANA 2026" 
-                className="w-auto h-auto max-w-full max-h-[40vh] md:max-h-[50vh] object-contain drop-shadow-2xl"
+                className="w-auto h-auto max-w-full max-h-[30vh] md:max-h-[40vh] object-contain drop-shadow-2xl"
               />
             </div>
           </motion.div>

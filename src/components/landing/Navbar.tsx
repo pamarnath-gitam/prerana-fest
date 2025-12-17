@@ -14,7 +14,7 @@ export default function Navbar() {
     { name: "Sponsors", href: "/sponsors" },
   ];
 
-  const logoUrl = "https://harmless-tapir-303.convex.cloud/api/storage/184e385c-8892-47b6-843e-8e75b561a7ab";
+  const logoUrl = "https://harmless-tapir-303.convex.cloud/api/storage/2cdde29b-96de-40ef-afc4-12e27e3d37f2";
 
   return (
     <motion.nav
@@ -25,7 +25,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
-          <img src={logoUrl} alt="Prerana Logo" className="h-12 object-contain" />
+          <img src={logoUrl} alt="Prerana Logo" className="h-20 object-contain" />
         </div>
 
         {/* Desktop Nav */}
