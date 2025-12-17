@@ -23,7 +23,7 @@ export default function About() {
               Prerana 2025 continued this legacy with two action-packed days—February 1 & 2—filled with cultural showcases, technical competitions, wellness sessions, workshops, esports battles, and endless opportunities to learn, perform, compete, and connect.
             </p>
             <p>
-              This year's fest came alive through the theme: <span className="text-foreground font-semibold">[CURRENT FEST THEME PLACEHOLDER]</span> — a creative compass that encouraged participants to think boldly, break patterns, and embrace new perspectives. From the main stage to the hackathons and from wellness zones to workshops, the theme echoed in every moment of the fest.
+              This year's fest came alive through the theme: <span className="text-foreground font-semibold">Innovation, Collaboration, and Hope</span> — a creative compass that encouraged participants to think boldly, break patterns, and embrace new perspectives. From the main stage to the hackathons and from wellness zones to workshops, the theme echoed in every moment of the fest.
             </p>
           </div>
         </div>

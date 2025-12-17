@@ -77,8 +77,11 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary drop-shadow-2xl">
             PRERANA 2026
           </h1>
-          <p className="text-2xl md:text-3xl font-light text-white/90 mb-8 tracking-wide">
-            Theme TBD
+          <p className="text-2xl md:text-3xl font-light text-white/90 mb-4 tracking-wide">
+            The Spectrum Within
+          </p>
+          <p className="text-lg md:text-xl text-white/70 mb-8 font-light italic">
+            Theme: Innovation, Collaboration, and Hope
           </p>
           
           <div className="flex flex-wrap justify-center gap-6 mb-12 text-white/80">
