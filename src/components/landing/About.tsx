@@ -70,7 +70,14 @@ export default function About() {
         </div>
 
         <div className="text-center">
-          <Button variant="link" className="text-lg gap-2" onClick={() => navigate("/#schedule")}>
+          <Button variant="link" className="text-lg gap-2" onClick={() => {
+             const scheduleSection = document.getElementById("schedule");
+             if (scheduleSection) {
+               scheduleSection.scrollIntoView({ behavior: "smooth" });
+             } else {
+               navigate("/#schedule");
+             }
+          }}>
             View Full Schedule <ArrowRight className="w-4 h-4" />
           </Button>
         </div>

@@ -39,45 +39,39 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col bg-background">
-      {/* Top Section with Video and Logo */}
-      <div className="relative w-full h-[65vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 z-0 bg-black">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <iframe
-              src="https://www.youtube.com/embed/4OO8z--ZfpM?autoplay=1&mute=1&controls=0&loop=1&playlist=4OO8z--ZfpM&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1&disablekb=1"
-              className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-60"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              title="Hero Background"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-background z-10" />
-          {/* Grid Pattern Overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-10" />
-        </div>
+    <section className="relative flex flex-col bg-background">
+      {/* Video Container - Aspect Ratio 16:9 to match YouTube and avoid clipping */}
+      <div className="relative w-full aspect-video bg-black overflow-hidden">
+        <iframe
+          src="https://www.youtube.com/embed/4OO8z--ZfpM?autoplay=1&mute=1&controls=0&loop=1&playlist=4OO8z--ZfpM&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1&disablekb=1"
+          className="absolute inset-0 w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          title="Hero Background"
+        />
+        {/* Subtle Overlay for text readability */}
+        <div className="absolute inset-0 bg-black/20 z-10" />
 
-        {/* Logo Content */}
-        <div className="container mx-auto px-4 relative z-20 text-center pt-20">
+        {/* Logo Content - Centered in the video area */}
+        <div className="absolute inset-0 z-20 flex items-center justify-center p-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center w-full h-full justify-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary border border-secondary/20 mb-8 backdrop-blur-sm">
-              <span className="relative flex h-3 w-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 text-white border border-white/20 mb-4 backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
               </span>
-              <span className="text-sm font-medium">Coming Jan 2026</span>
+              <span className="text-xs font-medium">Coming Jan 2026</span>
             </div>
 
-            <div className="flex justify-center w-full max-w-4xl">
+            <div className="flex justify-center w-full max-w-4xl px-4">
               <img 
                 src="https://harmless-tapir-303.convex.cloud/api/storage/184e385c-8892-47b6-843e-8e75b561a7ab" 
                 alt="PRERANA 2026" 
-                className="w-full h-auto object-contain drop-shadow-2xl max-h-[300px]"
+                className="w-auto h-auto max-w-full max-h-[40vh] md:max-h-[50vh] object-contain drop-shadow-2xl"
               />
             </div>
           </motion.div>
@@ -85,7 +79,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom Section with Details */}
-      <div className="relative z-30 bg-background pb-20 -mt-10">
+      <div className="relative z-30 bg-background py-12 border-t border-white/5">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

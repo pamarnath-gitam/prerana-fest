@@ -21,7 +21,14 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><button onClick={() => navigate("/about")} className="hover:text-primary transition-colors">About Us</button></li>
+              <li><button onClick={() => {
+                const aboutSection = document.getElementById("about");
+                if (aboutSection) {
+                  aboutSection.scrollIntoView({ behavior: "smooth" });
+                } else {
+                  navigate("/#about");
+                }
+              }} className="hover:text-primary transition-colors">About Us</button></li>
               <li><button onClick={() => navigate("/events")} className="hover:text-primary transition-colors">Events</button></li>
               <li><button onClick={() => navigate("/sponsors")} className="hover:text-primary transition-colors">Sponsors</button></li>
               <li><button onClick={() => navigate("/privacy")} className="hover:text-primary transition-colors">Privacy Policy</button></li>
