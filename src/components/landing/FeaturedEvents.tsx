@@ -9,7 +9,7 @@ const featuredEvents = [
   {
     title: "Flagship Hackathon",
     category: "Technical",
-    date: "Jan 22",
+    date: "Jan 23",
     location: "Lab Complex",
     image: "https://images.unsplash.com/photo-1504384308090-c54be3852f33?auto=format&fit=crop&q=80&w=1000",
     slug: "hackathon"
@@ -17,7 +17,7 @@ const featuredEvents = [
   {
     title: "Star Night Concert",
     category: "Cultural",
-    date: "Jan 23",
+    date: "Jan 24",
     location: "Open Air Theatre",
     image: "https://images.unsplash.com/photo-1459749411177-0473ef71607b?auto=format&fit=crop&q=80&w=1000",
     slug: "star-night"
@@ -25,7 +25,7 @@ const featuredEvents = [
   {
     title: "Robo Wars",
     category: "Technical",
-    date: "Jan 23",
+    date: "Jan 24",
     location: "Central Courtyard",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1000",
     slug: "robo-wars"

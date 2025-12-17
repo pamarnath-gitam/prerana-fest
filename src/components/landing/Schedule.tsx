@@ -9,21 +9,16 @@ const schedule = {
     { time: "10:30 AM", event: "Hackathon Kickoff", category: "Technical", location: "Lab Complex" },
     { time: "11:00 AM", event: "Art Exhibition Opening", category: "Cultural", location: "Student Center" },
     { time: "02:00 PM", event: "Tech Talk: AI Future", category: "Technical", location: "Seminar Hall 1" },
-    { time: "05:00 PM", event: "Battle of Bands", category: "Cultural", location: "Open Air Theatre" },
+    { time: "04:00 PM", event: "Fashion Show", category: "Cultural", location: "Main Auditorium" },
+    { time: "06:00 PM", event: "Battle of Bands", category: "Cultural", location: "Open Air Theatre" },
   ],
   day2: [
     { time: "07:00 AM", event: "Sunrise Yoga", category: "Wellness", location: "Sports Ground" },
     { time: "10:00 AM", event: "Robo Wars", category: "Technical", location: "Central Courtyard" },
     { time: "01:00 PM", event: "Dance Competition", category: "Cultural", location: "Main Auditorium" },
     { time: "03:00 PM", event: "Mental Health Workshop", category: "Wellness", location: "Seminar Hall 2" },
-    { time: "07:00 PM", event: "DJ Night", category: "Cultural", location: "Open Air Theatre" },
-  ],
-  day3: [
-    { time: "09:00 AM", event: "Coding Finale", category: "Technical", location: "Lab Complex" },
-    { time: "11:00 AM", event: "Fashion Show", category: "Cultural", location: "Main Auditorium" },
-    { time: "02:00 PM", event: "Meditation Session", category: "Wellness", location: "Yoga Hall" },
-    { time: "04:00 PM", event: "Valedictory Ceremony", category: "General", location: "Main Auditorium" },
-    { time: "06:00 PM", event: "Star Night Concert", category: "Cultural", location: "Open Air Theatre" },
+    { time: "05:00 PM", event: "Valedictory Ceremony", category: "General", location: "Main Auditorium" },
+    { time: "07:00 PM", event: "Star Night Concert", category: "Cultural", location: "Open Air Theatre" },
   ],
 };
 
@@ -37,10 +32,9 @@ export default function Schedule() {
         </div>
 
         <Tabs defaultValue="day1" className="max-w-4xl mx-auto">
-          <TabsList className="grid w-full grid-cols-3 mb-8">
+          <TabsList className="grid w-full grid-cols-2 mb-8">
             <TabsTrigger value="day1">Day 1 (Jan 23)</TabsTrigger>
             <TabsTrigger value="day2">Day 2 (Jan 24)</TabsTrigger>
-            <TabsTrigger value="day3">Day 3 (Jan 25)</TabsTrigger>
           </TabsList>
 
           {Object.entries(schedule).map(([day, events]) => (
