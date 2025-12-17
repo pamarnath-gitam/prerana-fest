@@ -76,9 +76,14 @@ export default function Hero() {
             <span className="text-sm font-medium">Coming Jan 2026</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary drop-shadow-2xl">
-            PRERANA 2026
-          </h1>
+          <div className="flex justify-center mb-8">
+            <img 
+              src="https://harmless-tapir-303.convex.cloud/api/storage/184e385c-8892-47b6-843e-8e75b561a7ab" 
+              alt="PRERANA 2026" 
+              className="w-full max-w-3xl object-contain drop-shadow-2xl"
+            />
+          </div>
+          
           <p className="text-2xl md:text-3xl font-light text-white/90 mb-4 tracking-wide">
             The Spectrum Within
           </p>
