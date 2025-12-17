@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
-import { toast } from "sonner";
+import { Check, ExternalLink } from "lucide-react";
 
 const plans = [
   {
@@ -29,13 +25,6 @@ const plans = [
 ];
 
 export default function Registration() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Registration successful!", {
-      description: "We've sent a confirmation email to your inbox.",
-    });
-  };
-
   return (
     <section id="registration" className="py-20">
       <div className="container mx-auto px-4">
@@ -74,51 +63,72 @@ export default function Registration() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full" variant={plan.popular ? "default" : "outline"}>Select Plan</Button>
+                  <Button className="w-full" variant={plan.popular ? "default" : "outline"} onClick={() => document.getElementById("fest-registration-frame")?.scrollIntoView({ behavior: "smooth" })}>
+                    Select Plan
+                  </Button>
                 </CardFooter>
               </Card>
             </motion.div>
           ))}
         </div>
 
-        <Card className="max-w-2xl mx-auto">
-          <CardHeader>
-            <CardTitle>Quick Registration</CardTitle>
-            <CardDescription>Fill out the form below to get started.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName">First name</Label>
-                  <Input id="firstName" placeholder="John" required />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName">Last name</Label>
-                  <Input id="lastName" placeholder="Doe" required />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john@example.com" required />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="plan">Select Plan</Label>
-                <Select>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select a plan" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="early">Early Bird</SelectItem>
-                    <SelectItem value="standard">Standard</SelectItem>
-                    <SelectItem value="group">Group</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-              <Button type="submit" className="w-full">Register</Button>
-            </form>
-          </CardContent>
-        </Card>
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Fest Registration Iframe */}
+          <Card className="w-full overflow-hidden border-primary/20">
+            <CardHeader>
+              <CardTitle>Fest Registration</CardTitle>
+              <CardDescription>Register for the main event here.</CardDescription>
+            </CardHeader>
+            <CardContent className="p-0 h-[600px]" id="fest-registration-frame">
+              <iframe 
+                src="https://lu.ma/embed/event/evt_placeholder" 
+                className="w-full h-full border-0"
+                title="Fest Registration"
+                allowFullScreen
+              ></iframe>
+            </CardContent>
+          </Card>
+
+          {/* Individual Events Registration */}
+          <div className="space-y-8">
+            <Card className="h-full flex flex-col justify-center border-secondary/20 bg-secondary/5">
+              <CardHeader>
+                <CardTitle className="text-3xl">Individual Events</CardTitle>
+                <CardDescription className="text-lg">
+                  Participating in specific competitions or workshops?
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-muted-foreground">
+                  If you wish to register for individual hackathons, dance battles, or workshops separately, please use our dedicated Google Form.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span>Hackathons & Coding Contests</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span>Cultural Competitions</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-secondary" />
+                    <span>Wellness Workshops</span>
+                  </li>
+                </ul>
+              </CardContent>
+              <CardFooter>
+                <Button 
+                  size="lg" 
+                  className="w-full gap-2" 
+                  onClick={() => window.open("https://forms.google.com/placeholder", "_blank")}
+                >
+                  Register for Individual Events <ExternalLink className="w-4 h-4" />
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

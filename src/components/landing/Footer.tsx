@@ -7,9 +7,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-primary-foreground font-bold">
-                P
-              </div>
+              <img src="/logo.svg" alt="Prerana Logo" className="w-8 h-8 object-contain" />
               <span className="text-xl font-bold">Prerana 2026</span>
             </div>
             <p className="text-muted-foreground text-sm">
