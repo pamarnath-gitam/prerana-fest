@@ -43,8 +43,8 @@ export default function Hero() {
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         {/* Video Background */}
-        <div className="absolute inset-0 bg-black/60 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background z-20" />
+        <div className="absolute inset-0 bg-black/30 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background z-20" />
         <video 
           autoPlay 
           muted 
@@ -52,7 +52,7 @@ export default function Hero() {
           playsInline
           preload="metadata"
           poster="https://drive.google.com/thumbnail?id=101cvCeV9auTsb5hHAaZXehF0OyvcQgDP-CGwSxPv1JM&sz=w1920"
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-cover"
         >
           <source src="https://drive.google.com/uc?export=download&id=101cvCeV9auTsb5hHAaZXehF0OyvcQgDP-CGwSxPv1JM" type="video/mp4" />
           {/* Fallback if video fails */}
@@ -84,10 +84,10 @@ export default function Hero() {
             />
           </div>
           
-          <p className="text-2xl md:text-3xl font-light text-white/90 mb-4 tracking-wide">
+          <p className="text-2xl md:text-3xl font-light text-white/90 mb-4 tracking-wide drop-shadow-lg">
             The Spectrum Within
           </p>
-          <p className="text-lg md:text-xl text-white/70 mb-8 font-light italic">
+          <p className="text-lg md:text-xl text-white/70 mb-8 font-light italic drop-shadow-md">
             Theme: Innovation, Collaboration, and Hope
           </p>
           
