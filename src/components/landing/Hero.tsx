@@ -41,22 +41,18 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 z-0">
-        {/* Video Background */}
-        <div className="absolute inset-0 bg-black/30 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background z-20" />
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          preload="metadata"
-          poster="https://drive.google.com/thumbnail?id=101cvCeV9auTsb5hHAaZXehF0OyvcQgDP-CGwSxPv1JM&sz=w1920"
-          className="w-full h-full object-cover"
-        >
-          <source src="https://drive.google.com/uc?export=download&id=101cvCeV9auTsb5hHAaZXehF0OyvcQgDP-CGwSxPv1JM" type="video/mp4" />
-          {/* Fallback if video fails */}
-        </video>
+      <div className="absolute inset-0 z-0 bg-black">
+        {/* YouTube Video Background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <iframe
+            src="https://www.youtube.com/embed/4OO8z--ZfpM?autoplay=1&mute=1&controls=0&loop=1&playlist=4OO8z--ZfpM&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1&disablekb=1"
+            className="absolute top-1/2 left-1/2 w-[300%] h-[300%] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-50"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title="Hero Background"
+          />
+        </div>
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/40 to-background z-20" />
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-20" />
@@ -103,16 +99,16 @@ export default function Hero() {
           </div>
 
           {/* Countdown */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
             {[
               { label: "Days", value: timeLeft.days },
               { label: "Hours", value: timeLeft.hours },
               { label: "Minutes", value: timeLeft.minutes },
               { label: "Seconds", value: timeLeft.seconds },
             ].map((item) => (
-              <div key={item.label} className="bg-black/40 backdrop-blur-md border border-white/10 p-4 rounded-xl">
-                <div className="text-4xl font-bold text-white mb-1 font-mono">{item.value.toString().padStart(2, '0')}</div>
-                <div className="text-xs text-white/60 uppercase tracking-wider">{item.label}</div>
+              <div key={item.label} className="bg-black/40 backdrop-blur-md border border-white/10 p-3 rounded-xl">
+                <div className="text-2xl font-bold text-white mb-1 font-mono">{item.value.toString().padStart(2, '0')}</div>
+                <div className="text-[10px] text-white/60 uppercase tracking-wider">{item.label}</div>
               </div>
             ))}
           </div>
