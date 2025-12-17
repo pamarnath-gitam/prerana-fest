@@ -28,9 +28,15 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative p-8"
+        className="relative p-8 flex flex-col items-center text-center"
       >
         <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-pulse" />
+        
+        <p className="text-xs md:text-sm text-muted-foreground mb-6 relative z-10 font-medium tracking-widest uppercase max-w-lg">
+          The Directorate of Student Life, GITAM Deemed to be University
+          <span className="block mt-1 text-[10px] md:text-xs opacity-80">Presents</span>
+        </p>
+
         <img
           src="https://harmless-tapir-303.convex.cloud/api/storage/2b350c79-8c88-4654-8aa0-21f450171ded"
           alt="Prerana 2026"
