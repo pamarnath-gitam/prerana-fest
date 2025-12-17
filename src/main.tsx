@@ -13,6 +13,11 @@ import "./types/global.d.ts";
 const Landing = lazy(() => import("./pages/Landing.tsx"));
 const AuthPage = lazy(() => import("./pages/Auth.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
+const Register = lazy(() => import("./pages/Register.tsx"));
+const Events = lazy(() => import("./pages/Events.tsx"));
+const Sponsors = lazy(() => import("./pages/Sponsors.tsx"));
+const Privacy = lazy(() => import("./pages/Privacy.tsx"));
+const Terms = lazy(() => import("./pages/Terms.tsx"));
 
 // Simple loading fallback for route transitions
 function RouteLoading() {
@@ -24,8 +29,6 @@ function RouteLoading() {
 }
 
 const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
-
-
 
 function RouteSyncer() {
   const location = useLocation();
@@ -50,7 +53,6 @@ function RouteSyncer() {
   return null;
 }
 
-
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <VlyToolbar />
@@ -61,7 +63,15 @@ createRoot(document.getElementById("root")!).render(
           <Suspense fallback={<RouteLoading />}>
             <Routes>
               <Route path="/" element={<Landing />} />
-              <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} /> {/* TODO: change redirect after auth to correct page */}
+              <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/events/:category" element={<Events />} />
+              <Route path="/events/:category/:slug" element={<Events />} />
+              <Route path="/sponsors" element={<Sponsors />} />
+              <Route path="/sponsors/partner-with-us" element={<Sponsors />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

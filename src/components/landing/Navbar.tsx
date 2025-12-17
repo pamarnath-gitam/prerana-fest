@@ -9,12 +9,12 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "About", href: "#about" },
-    { name: "Events", href: "#pillars" },
-    { name: "Schedule", href: "#schedule" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Contact", href: "#footer" },
+    { name: "Events", href: "/events" },
+    { name: "Schedule", href: "/#schedule" },
+    { name: "Sponsors", href: "/sponsors" },
   ];
+
+  const logoUrl = "https://harmless-tapir-303.convex.cloud/api/storage/dca193ce-10ba-47cb-8299-a73116a1da72";
 
   return (
     <motion.nav
@@ -23,12 +23,9 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50"
     >
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
-          <img src="/logo.svg" alt="Prerana Logo" className="w-10 h-10 object-contain" />
-          <span className="text-xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            Prerana 2026
-          </span>
+          <img src={logoUrl} alt="Prerana Logo" className="h-12 object-contain" />
         </div>
 
         {/* Desktop Nav */}
@@ -38,11 +35,27 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={(e) => {
+                if (link.href.startsWith("/")) {
+                  e.preventDefault();
+                  if (link.href.includes("#")) {
+                     // Handle hash navigation if needed, for now just navigate
+                     const [path, hash] = link.href.split("#");
+                     if (window.location.pathname === path) {
+                        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+                     } else {
+                        navigate(link.href);
+                     }
+                  } else {
+                    navigate(link.href);
+                  }
+                }
+              }}
             >
               {link.name}
             </a>
           ))}
-          <Button onClick={() => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" })}>
+          <Button onClick={() => navigate("/register")}>
             Register Now
           </Button>
         </div>
@@ -69,14 +82,18 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsMenuOpen(false);
+                  navigate(link.href);
+                }}
               >
                 {link.name}
               </a>
             ))}
             <Button className="w-full" onClick={() => {
               setIsMenuOpen(false);
-              document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" });
+              navigate("/register");
             }}>
               Register Now
             </Button>

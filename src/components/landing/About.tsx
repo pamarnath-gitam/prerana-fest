@@ -1,93 +1,67 @@
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Sparkles, Users, Zap } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Zap } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function About() {
-  return (
-    <section id="about" className="py-20 relative overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              About <span className="text-primary">GITAM</span> & <span className="text-secondary">Prerana</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              GITAM (Deemed to be University), Bengaluru, is a premier educational institution committed to excellence in higher education. 
-              Nestled in a serene environment, it fosters innovation and holistic development.
-            </p>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              <strong className="text-foreground">Prerana</strong> is our annual Techno-Cultural and Wellness fest, a melting pot of talent, creativity, and technology. 
-              For 2026, we are elevating the experience with a futuristic theme that blends high-tech innovation with mental and physical wellness.
-            </p>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[
-                { icon: Users, label: "5000+ Footfall", color: "text-blue-400" },
-                { icon: Zap, label: "50+ Events", color: "text-yellow-400" },
-                { icon: Sparkles, label: "3 Days", color: "text-purple-400" },
-              ].map((stat, index) => (
-                <Card key={index} className="bg-card/50 border-border/50">
-                  <CardContent className="p-4 flex flex-col items-center text-center">
-                    <stat.icon className={`w-8 h-8 mb-2 ${stat.color}`} />
-                    <span className="font-bold">{stat.label}</span>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </motion.div>
+  const navigate = useNavigate();
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-2xl blur-2xl" />
-            <div className="relative grid grid-cols-2 gap-4">
-              <div className="space-y-4 mt-8">
-                <div className="h-48 bg-muted rounded-2xl overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                  <img 
-                    src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Concert" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="h-64 bg-muted rounded-2xl overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                  <img 
-                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Workshop" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-              <div className="space-y-4">
-                <div className="h-64 bg-muted rounded-2xl overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                  <img 
-                    src="https://images.unsplash.com/photo-1504384308090-c54be3852f33?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Tech" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <div className="h-48 bg-muted rounded-2xl overflow-hidden relative group">
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                  <img 
-                    src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&q=80&w=1000" 
-                    alt="Wellness" 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-              </div>
-            </div>
-          </motion.div>
+  return (
+    <section id="about" className="py-20 relative overflow-hidden bg-muted/20">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4">More Than a Fest. It's an Experience.</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Prerana 2026 brings together the brightest minds and the most creative souls for two days of innovation, celebration, and rejuvenation.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
+          {[
+            { 
+              icon: Zap, 
+              title: "National Competitions", 
+              desc: "Compete with the best talent from across the country in coding, robotics, and more.",
+              color: "text-yellow-400" 
+            },
+            { 
+              icon: Sparkles, 
+              title: "Star Night Concerts", 
+              desc: "Experience electrifying performances by top artists and bands under the stars.",
+              color: "text-purple-400" 
+            },
+            { 
+              icon: Users, 
+              title: "Technical Workshops", 
+              desc: "Learn from industry experts and get hands-on experience with cutting-edge tech.",
+              color: "text-blue-400" 
+            },
+          ].map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+            >
+              <Card className="h-full bg-card/50 border-border/50 hover:border-primary/30 transition-colors">
+                <CardContent className="p-6 flex flex-col items-center text-center">
+                  <div className={`w-12 h-12 rounded-full bg-background flex items-center justify-center mb-4 shadow-sm`}>
+                    <item.icon className={`w-6 h-6 ${item.color}`} />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button variant="link" className="text-lg gap-2" onClick={() => navigate("/schedule")}>
+            View Full Schedule <ArrowRight className="w-4 h-4" />
+          </Button>
         </div>
       </div>
     </section>

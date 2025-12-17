@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Calendar, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function Hero() {
+  const navigate = useNavigate();
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -12,8 +14,9 @@ export default function Hero() {
   });
 
   useEffect(() => {
-    // Set date to roughly one year from now for "Prerana 2026"
-    const targetDate = new Date("2026-03-15T09:00:00").getTime();
+    // Set date to Jan 22, 2026 09:00:00 IST
+    // IST is UTC+5:30
+    const targetDate = new Date("2026-01-22T09:00:00+05:30").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -39,42 +42,51 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_100%)] z-10" />
+        {/* Video Background Placeholder */}
+        <div className="absolute inset-0 bg-black/60 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background z-20" />
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover opacity-50"
+        >
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-futuristic-digital-circuit-board-loop-2824-large.mp4" type="video/mp4" />
+          {/* Fallback if video fails or for now */}
+        </video>
         
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] z-20" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10 text-center">
+      <div className="container mx-auto px-4 relative z-30 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary border border-secondary/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary border border-secondary/20 mb-8 backdrop-blur-sm">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
             </span>
-            <span className="text-sm font-medium">Coming March 2026</span>
+            <span className="text-sm font-medium">Coming Jan 2026</span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary drop-shadow-2xl">
             PRERANA 2026
           </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto font-light">
-            Innovate. Celebrate. Rejuvenate.
+          <p className="text-2xl md:text-3xl font-light text-white/90 mb-8 tracking-wide">
+            Theme TBD
           </p>
-
-          <div className="flex flex-wrap justify-center gap-6 mb-12 text-muted-foreground">
-            <div className="flex items-center gap-2">
+          
+          <div className="flex flex-wrap justify-center gap-6 mb-12 text-white/80">
+            <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-full backdrop-blur-md border border-white/10">
               <Calendar className="w-5 h-5 text-primary" />
-              <span>March 15-17, 2026</span>
+              <span>Jan 22 - Jan 23, 2026</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 bg-black/30 px-4 py-2 rounded-full backdrop-blur-md border border-white/10">
               <MapPin className="w-5 h-5 text-primary" />
               <span>GITAM University, Bengaluru</span>
             </div>
@@ -88,9 +100,9 @@ export default function Hero() {
               { label: "Minutes", value: timeLeft.minutes },
               { label: "Seconds", value: timeLeft.seconds },
             ].map((item) => (
-              <div key={item.label} className="bg-card/50 backdrop-blur-sm border border-border p-4 rounded-xl">
-                <div className="text-4xl font-bold text-foreground mb-1">{item.value}</div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wider">{item.label}</div>
+              <div key={item.label} className="bg-black/40 backdrop-blur-md border border-white/10 p-4 rounded-xl">
+                <div className="text-4xl font-bold text-white mb-1 font-mono">{item.value.toString().padStart(2, '0')}</div>
+                <div className="text-xs text-white/60 uppercase tracking-wider">{item.label}</div>
               </div>
             ))}
           </div>
@@ -98,18 +110,18 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 rounded-xl shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow"
-              onClick={() => document.getElementById("registration")?.scrollIntoView({ behavior: "smooth" })}
+              className="text-lg px-8 py-6 rounded-xl shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow w-full sm:w-auto"
+              onClick={() => navigate("/register")}
             >
-              Register Now
+              REGISTER NOW
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-lg px-8 py-6 rounded-xl"
-              onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+              className="text-lg px-8 py-6 rounded-xl bg-black/20 backdrop-blur-sm border-white/20 hover:bg-white/10 w-full sm:w-auto"
+              onClick={() => navigate("/events")}
             >
-              Learn More
+              Explore Events
             </Button>
           </div>
         </motion.div>

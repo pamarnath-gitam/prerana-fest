@@ -1,10 +1,10 @@
 import About from "@/components/landing/About";
+import CtaBar from "@/components/landing/CtaBar";
+import FeaturedEvents from "@/components/landing/FeaturedEvents";
 import Footer from "@/components/landing/Footer";
 import Gallery from "@/components/landing/Gallery";
 import Hero from "@/components/landing/Hero";
 import Navbar from "@/components/landing/Navbar";
-import Pillars from "@/components/landing/Pillars";
-import Registration from "@/components/landing/Registration";
 import Schedule from "@/components/landing/Schedule";
 
 export default function Landing() {
@@ -14,10 +14,10 @@ export default function Landing() {
       <main>
         <Hero />
         <About />
-        <Pillars />
+        <FeaturedEvents />
         <Schedule />
         <Gallery />
-        <Registration />
+        <CtaBar />
       </main>
       <Footer />
     </div>

@@ -1,14 +1,17 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { useNavigate } from "react-router";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const logoUrl = "https://harmless-tapir-303.convex.cloud/api/storage/dca193ce-10ba-47cb-8299-a73116a1da72";
+
   return (
     <footer id="footer" className="bg-card border-t border-border pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/logo.svg" alt="Prerana Logo" className="w-8 h-8 object-contain" />
-              <span className="text-xl font-bold">Prerana 2026</span>
+              <img src={logoUrl} alt="Prerana Logo" className="h-10 object-contain" />
             </div>
             <p className="text-muted-foreground text-sm">
               The annual Techno-Cultural and Wellness fest of GITAM University, Bengaluru.
@@ -18,10 +21,11 @@ export default function Footer() {
           <div>
             <h3 className="font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#pillars" className="hover:text-primary transition-colors">Events</a></li>
-              <li><a href="#schedule" className="hover:text-primary transition-colors">Schedule</a></li>
-              <li><a href="#registration" className="hover:text-primary transition-colors">Register</a></li>
+              <li><button onClick={() => navigate("/about")} className="hover:text-primary transition-colors">About Us</button></li>
+              <li><button onClick={() => navigate("/events")} className="hover:text-primary transition-colors">Events</button></li>
+              <li><button onClick={() => navigate("/sponsors")} className="hover:text-primary transition-colors">Sponsors</button></li>
+              <li><button onClick={() => navigate("/privacy")} className="hover:text-primary transition-colors">Privacy Policy</button></li>
+              <li><button onClick={() => navigate("/terms")} className="hover:text-primary transition-colors">Terms & Conditions</button></li>
             </ul>
           </div>
 
@@ -38,7 +42,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-1" />
-                <span>GITAM University, NH 207, Nagadenehalli, Doddaballapur Road, Bengaluru - 561203</span>
+                <span>GITAM University, Bengaluru</span>
               </li>
             </ul>
           </div>
@@ -62,8 +66,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
+        <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>&copy; 2026 Prerana Fest. All rights reserved.</p>
+          <div className="flex items-center gap-2">
+             <span>Powered by</span>
+             <span className="font-bold text-primary">GITAM University</span>
+          </div>
         </div>
       </div>
     </footer>
