@@ -24,8 +24,14 @@ const schedule = {
 
 export default function Schedule() {
   return (
-    <section id="schedule" className="py-20">
-      <div className="container mx-auto px-4">
+    <section id="schedule" className="py-20 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-muted/10 rounded-full blur-3xl animate-pulse delay-700" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Event Schedule</h2>
           <p className="text-muted-foreground">Don't miss out on any of the action.</p>
