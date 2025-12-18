@@ -8,8 +8,15 @@ export default function About() {
   const navigate = useNavigate();
 
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-muted/20">
-      <div className="container mx-auto px-4">
+    <section id="about" className="py-20 relative overflow-hidden bg-background">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/2 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-700" />
+        <div className="absolute -bottom-24 left-1/3 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">WHAT IS PRERANA?</h2>
           <blockquote className="text-xl md:text-2xl font-light italic text-primary mb-8 max-w-4xl mx-auto">
@@ -34,19 +41,19 @@ export default function About() {
               icon: Zap, 
               title: "National Competitions", 
               desc: "Compete with the best talent from across the country in coding, robotics, and more.",
-              color: "text-yellow-400" 
+              color: "text-secondary" 
             },
             { 
               icon: Sparkles, 
               title: "Star Night Concerts", 
               desc: "Experience electrifying performances by top artists and bands under the stars.",
-              color: "text-purple-400" 
+              color: "text-primary" 
             },
             { 
               icon: Users, 
               title: "Technical Workshops", 
               desc: "Learn from industry experts and get hands-on experience with cutting-edge tech.",
-              color: "text-blue-400" 
+              color: "text-secondary" 
             },
           ].map((item, index) => (
             <motion.div
