@@ -33,26 +33,6 @@ export default function Sponsors() {
               Partner With Us
             </Button>
           </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            {/* Placeholder Sponsors */}
-            {Array.from({ length: 8 }).map((_, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <Card className="flex items-center justify-center p-8 bg-muted/30 border-border/50 hover:border-primary/50 transition-colors h-full">
-                  <CardContent className="p-0">
-                    <div className="text-2xl font-bold text-muted-foreground opacity-50">LOGO {i + 1}</div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </main>
       <Footer />
