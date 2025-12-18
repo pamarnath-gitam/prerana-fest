@@ -215,7 +215,12 @@ export default function Events() {
                           </CardContent>
                           <CardFooter className="text-sm text-muted-foreground flex gap-4 border-t border-border/50 pt-4 mt-auto">
                             <span className="flex items-center gap-1"><Users className="w-3 h-3" /> {event.teamSize}</span>
-                            <span className="flex items-center gap-1"><Trophy className="w-3 h-3" /> {event.prizes[0].split(':')[1]}</span>
+                            {event.prizes && event.prizes.length > 0 && (
+                              <span className="flex items-center gap-1">
+                                <Trophy className="w-3 h-3" /> 
+                                {event.prizes[0].includes(':') ? event.prizes[0].split(':')[1] : event.prizes[0]}
+                              </span>
+                            )}
                           </CardFooter>
                         </Card>
                       </motion.div>
