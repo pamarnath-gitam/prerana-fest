@@ -67,13 +67,6 @@ export default function Hero() {
               <span className="text-xs font-medium">Coming Jan 2026</span>
             </div>
 
-            <div className="flex justify-center w-full max-w-4xl px-4">
-              <img 
-                src="https://harmless-tapir-303.convex.cloud/api/storage/2cdde29b-96de-40ef-afc4-12e27e3d37f2" 
-                alt="PRERANA 2026" 
-                className="w-auto h-auto max-w-full max-h-[20vh] md:max-h-[30vh] object-contain drop-shadow-2xl"
-              />
-            </div>
           </motion.div>
         </div>
       </div>

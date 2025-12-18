@@ -23,7 +23,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
-          <span className="text-2xl font-black tracking-tighter text-primary">PRERANA 2026</span>
+          <img src="https://harmless-tapir-303.convex.cloud/api/storage/2cdde29b-96de-40ef-afc4-12e27e3d37f2" alt="PRERANA 2026" className="h-12 w-auto" />
         </div>
 
         {/* Desktop Nav */}
