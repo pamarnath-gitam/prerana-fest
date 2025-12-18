@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { events } from "@/data/events";
 import { motion } from "framer-motion";
-import { ArrowLeft, Calendar, CheckCircle2, Code2, Heart, MapPin, Music, Trophy, Users } from "lucide-react";
+import { ArrowLeft, Calendar, CheckCircle2, Code2, Heart, MapPin, Music, Trophy, Users, Clock } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
@@ -153,9 +153,13 @@ export default function Events() {
                           <CardTitle className="text-xl group-hover:text-primary transition-colors">{event.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground text-sm line-clamp-3">{event.shortDescription}</p>
+                          <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{event.shortDescription}</p>
+                          <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                            <span className="flex items-center gap-2"><MapPin className="w-3 h-3" /> {event.location}</span>
+                            {event.day && <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {event.day}</span>}
+                          </div>
                         </CardContent>
-                        <CardFooter className="text-sm text-muted-foreground flex gap-4">
+                        <CardFooter className="text-sm text-muted-foreground flex gap-4 border-t border-border/50 pt-4 mt-auto">
                           <span className="flex items-center gap-1"><Users className="w-3 h-3" /> {event.teamSize}</span>
                           <span className="flex items-center gap-1"><Trophy className="w-3 h-3" /> {event.prizes[0].split(':')[1]}</span>
                         </CardFooter>
@@ -228,6 +232,18 @@ export default function Events() {
                                 <span className="text-xs text-muted-foreground block">Eligibility</span>
                                 <span className="font-medium">{selectedEvent.eligibility}</span>
                               </div>
+                              {selectedEvent.timeLimit && (
+                                <div className="bg-muted/30 p-3 rounded-lg">
+                                  <span className="text-xs text-muted-foreground block">Time Limit</span>
+                                  <span className="font-medium">{selectedEvent.timeLimit}</span>
+                                </div>
+                              )}
+                              {selectedEvent.day && (
+                                <div className="bg-muted/30 p-3 rounded-lg">
+                                  <span className="text-xs text-muted-foreground block">Day</span>
+                                  <span className="font-medium">{selectedEvent.day}</span>
+                                </div>
+                              )}
                             </div>
 
                             <div>
@@ -250,14 +266,16 @@ export default function Events() {
                               </div>
                             )}
 
-                            <div>
-                              <h4 className="font-semibold mb-2 text-destructive">Disqualification Rules</h4>
-                              <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                                {selectedEvent.disqualificationRules.map((d, i) => (
-                                  <li key={i}>{d}</li>
-                                ))}
-                              </ul>
-                            </div>
+                            {selectedEvent.disqualificationRules.length > 0 && (
+                              <div>
+                                <h4 className="font-semibold mb-2 text-destructive">Disqualification Rules</h4>
+                                <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                                  {selectedEvent.disqualificationRules.map((d, i) => (
+                                    <li key={i}>{d}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
                           </div>
                         </ScrollArea>
 
@@ -272,7 +290,7 @@ export default function Events() {
                               htmlFor="terms"
                               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-muted-foreground"
                             >
-                              I have read and understood the rules, guidelines, judging criteria, and disqualification terms for the selected event. I agree to abide by all PRERNA Technical Event regulations and confirm that the information provided is accurate.
+                              I have read and understood all the rules and regulations of this cultural event and agree to abide by the decisions of the judges.
                             </label>
                           </div>
                           <DialogFooter>
@@ -351,15 +369,31 @@ export default function Events() {
                           </div>
                           <div className="font-medium">{selectedEvent.location}</div>
                         </div>
+                        {selectedEvent.day && (
+                          <div>
+                            <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
+                              <Calendar className="w-4 h-4" /> Day
+                            </div>
+                            <div className="font-medium">{selectedEvent.day}</div>
+                          </div>
+                        )}
                         <div>
                           <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
                             <Users className="w-4 h-4" /> Team Size
                           </div>
                           <div className="font-medium">{selectedEvent.teamSize}</div>
                         </div>
+                        {selectedEvent.timeLimit && (
+                          <div>
+                            <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
+                              <Clock className="w-4 h-4" /> Time Limit
+                            </div>
+                            <div className="font-medium">{selectedEvent.timeLimit}</div>
+                          </div>
+                        )}
                         <div>
                           <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
-                            <Calendar className="w-4 h-4" /> Eligibility
+                            <CheckCircle2 className="w-4 h-4" /> Eligibility
                           </div>
                           <div className="font-medium">{selectedEvent.eligibility}</div>
                         </div>
