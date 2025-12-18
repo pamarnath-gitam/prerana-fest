@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { events } from "@/data/events";
 import { motion } from "framer-motion";
-import { ArrowLeft, Calendar, CheckCircle2, Code2, Heart, MapPin, Music, Trophy, Users, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, CheckCircle2, Code2, Heart, MapPin, Music, Trophy, Users, Clock, Layers } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
@@ -48,6 +48,9 @@ export default function Events() {
   const categoryEvents = category 
     ? events.filter(e => e.category.toLowerCase() === category.toLowerCase() && e.active)
     : [];
+
+  const regularEvents = categoryEvents.filter(e => !e.isCombo);
+  const comboEvents = categoryEvents.filter(e => e.isCombo);
 
   // Find specific event if slug is present
   const selectedEvent = slug 
@@ -133,39 +136,91 @@ export default function Events() {
                 <p className="text-muted-foreground">Select an event to view details and register.</p>
               </div>
 
-              {categoryEvents.length > 0 ? (
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {categoryEvents.map((event, index) => (
-                    <motion.div
-                      key={event.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      onClick={() => navigate(`/events/${category}/${event.slug}`)}
-                      className="cursor-pointer"
-                    >
-                      <Card className="h-full hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5 group">
-                        <CardHeader>
-                          <div className="flex justify-between items-start mb-2">
-                            <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">{event.code}</span>
-                            {event.requiresPayment && <span className="text-xs font-bold text-secondary">PAID</span>}
-                          </div>
-                          <CardTitle className="text-xl group-hover:text-primary transition-colors">{event.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{event.shortDescription}</p>
-                          <div className="flex flex-col gap-2 text-sm text-muted-foreground">
-                            <span className="flex items-center gap-2"><MapPin className="w-3 h-3" /> {event.location}</span>
-                            {event.day && <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {event.day}</span>}
-                          </div>
-                        </CardContent>
-                        <CardFooter className="text-sm text-muted-foreground flex gap-4 border-t border-border/50 pt-4 mt-auto">
-                          <span className="flex items-center gap-1"><Users className="w-3 h-3" /> {event.teamSize}</span>
-                          <span className="flex items-center gap-1"><Trophy className="w-3 h-3" /> {event.prizes[0].split(':')[1]}</span>
-                        </CardFooter>
-                      </Card>
-                    </motion.div>
-                  ))}
+              {/* Combo Events Section */}
+              {comboEvents.length > 0 && (
+                <div className="mb-16">
+                  <div className="flex items-center gap-3 mb-6">
+                    <Layers className="w-6 h-6 text-secondary" />
+                    <h2 className="text-2xl font-bold text-secondary">Combo Events</h2>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    {comboEvents.map((event, index) => (
+                      <motion.div
+                        key={event.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        onClick={() => navigate(`/events/${category}/${event.slug}`)}
+                        className="cursor-pointer"
+                      >
+                        <Card className="h-full border-secondary/30 hover:border-secondary transition-all hover:shadow-lg hover:shadow-secondary/10 group bg-secondary/5">
+                          <CardHeader>
+                            <div className="flex justify-between items-start mb-2">
+                              <span className="text-xs font-mono text-secondary bg-secondary/10 px-2 py-1 rounded">{event.code}</span>
+                              <span className="text-xs font-bold text-secondary">{event.registrationFee}</span>
+                            </div>
+                            <CardTitle className="text-xl group-hover:text-secondary transition-colors">{event.title}</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            <p className="text-muted-foreground text-sm mb-4">{event.shortDescription}</p>
+                            <div className="space-y-2">
+                              <p className="text-xs font-semibold text-secondary uppercase tracking-wider">Included Events:</p>
+                              <ul className="text-sm text-muted-foreground list-disc list-inside">
+                                {event.includedEvents?.map((included, i) => (
+                                  <li key={i}>{included}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Regular Events Section */}
+              {regularEvents.length > 0 ? (
+                <div>
+                  {comboEvents.length > 0 && (
+                    <div className="flex items-center gap-3 mb-6">
+                      <Music className="w-6 h-6 text-primary" />
+                      <h2 className="text-2xl font-bold">Individual Events</h2>
+                    </div>
+                  )}
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {regularEvents.map((event, index) => (
+                      <motion.div
+                        key={event.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        onClick={() => navigate(`/events/${category}/${event.slug}`)}
+                        className="cursor-pointer"
+                      >
+                        <Card className="h-full hover:border-primary/50 transition-all hover:shadow-lg hover:shadow-primary/5 group">
+                          <CardHeader>
+                            <div className="flex justify-between items-start mb-2">
+                              <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">{event.code}</span>
+                              {event.requiresPayment && <span className="text-xs font-bold text-secondary">PAID</span>}
+                            </div>
+                            <CardTitle className="text-xl group-hover:text-primary transition-colors">{event.title}</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            <p className="text-muted-foreground text-sm line-clamp-3 mb-4">{event.shortDescription}</p>
+                            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+                              <span className="flex items-center gap-2"><MapPin className="w-3 h-3" /> {event.location}</span>
+                              {event.day && <span className="flex items-center gap-2"><Calendar className="w-3 h-3" /> {event.day}</span>}
+                            </div>
+                          </CardContent>
+                          <CardFooter className="text-sm text-muted-foreground flex gap-4 border-t border-border/50 pt-4 mt-auto">
+                            <span className="flex items-center gap-1"><Users className="w-3 h-3" /> {event.teamSize}</span>
+                            <span className="flex items-center gap-1"><Trophy className="w-3 h-3" /> {event.prizes[0].split(':')[1]}</span>
+                          </CardFooter>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               ) : (
                 <div className="text-center py-20">
@@ -194,6 +249,7 @@ export default function Events() {
                     <div className="flex items-center gap-3 mb-2">
                       <span className="text-sm font-mono text-primary bg-primary/10 px-2 py-1 rounded">{selectedEvent.code}</span>
                       <span className="text-sm text-muted-foreground">{selectedEvent.category}</span>
+                      {selectedEvent.isCombo && <span className="text-sm font-bold text-secondary bg-secondary/10 px-2 py-1 rounded">COMBO</span>}
                     </div>
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">{selectedEvent.title}</h1>
                     <p className="text-xl text-muted-foreground">{selectedEvent.shortDescription}</p>
@@ -222,7 +278,18 @@ export default function Events() {
                               <h4 className="font-semibold mb-2 text-primary">About the Event</h4>
                               <p className="text-sm text-muted-foreground">{selectedEvent.fullDescription}</p>
                             </div>
-                            
+
+                            {selectedEvent.isCombo && selectedEvent.includedEvents && (
+                              <div className="bg-secondary/10 p-4 rounded-lg border border-secondary/20">
+                                <h4 className="font-semibold mb-2 text-secondary">Included Events</h4>
+                                <ul className="list-disc list-inside text-sm text-muted-foreground">
+                                  {selectedEvent.includedEvents.map((ev, i) => (
+                                    <li key={i}>{ev}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+
                             <div className="grid grid-cols-2 gap-4">
                               <div className="bg-muted/30 p-3 rounded-lg">
                                 <span className="text-xs text-muted-foreground block">Team Size</span>
@@ -290,7 +357,7 @@ export default function Events() {
                               htmlFor="terms"
                               className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-muted-foreground"
                             >
-                              I have read and understood all the rules and regulations of this cultural event and agree to abide by the decisions of the judges.
+                              I have read and understood all the rules and regulations of this {selectedEvent.isCombo ? "combo" : "cultural"} event and agree to abide by the decisions of the judges.
                             </label>
                           </div>
                           <DialogFooter>
@@ -319,6 +386,26 @@ export default function Events() {
                         </p>
                       </CardContent>
                     </Card>
+
+                    {selectedEvent.isCombo && selectedEvent.includedEvents && (
+                      <Card className="border-secondary/30 bg-secondary/5">
+                        <CardHeader>
+                          <CardTitle className="flex items-center gap-2 text-secondary">
+                            <Layers className="w-5 h-5" /> Included Events
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent>
+                          <ul className="space-y-2">
+                            {selectedEvent.includedEvents.map((ev, i) => (
+                              <li key={i} className="flex items-center gap-2 text-lg font-medium">
+                                <span className="w-2 h-2 rounded-full bg-secondary" />
+                                {ev}
+                              </li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                    )}
 
                     <Card>
                       <CardHeader>

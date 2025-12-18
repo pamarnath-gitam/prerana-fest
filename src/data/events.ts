@@ -18,6 +18,8 @@ export interface Event {
   slug: string;
   day?: string;
   timeLimit?: string;
+  isCombo?: boolean;
+  includedEvents?: string[];
 }
 
 export const events: Event[] = [
@@ -687,5 +689,106 @@ export const events: Event[] = [
     slug: "genspeak-studio",
     day: "Day 2",
     timeLimit: "2–3 minutes"
+  },
+  // COMBO EVENTS
+  {
+    id: "combo01",
+    title: "COMBO 1: WESTERN SOLO + SPOT CHOREOGRAPHY",
+    code: "COMBO01",
+    category: "Cultural",
+    shortDescription: "Western Solo Dance + Spot Choreography bundle.",
+    fullDescription: "Register for both Western Solo Dance and Spot Choreography together.",
+    location: "Auditorium",
+    teamSize: "1",
+    eligibility: "Open to all",
+    registrationFee: "₹249",
+    prizes: ["See individual events"],
+    guidelines: [
+      "Participants must follow the rules and regulations of each individual event included in the combo.",
+      "Judges' decisions will be final for all events."
+    ],
+    judgingCriteria: [],
+    disqualificationRules: [],
+    requiresPayment: true,
+    active: true,
+    slug: "combo-1",
+    day: "Day 2",
+    isCombo: true,
+    includedEvents: ["Solo Dance (Western)", "Spot Choreography"]
+  },
+  {
+    id: "combo02",
+    title: "COMBO 2: GROUP DANCE WESTERN + BATTLE OF BANDS + FASHION WALK",
+    code: "COMBO02",
+    category: "Cultural",
+    shortDescription: "Group Dance (Western) + Battle of Bands + Fashion Walk bundle.",
+    fullDescription: "Register for Group Dance (Western), Battle of Bands, and Fashion Walk together.",
+    location: "Multiple Venues",
+    teamSize: "Varies",
+    eligibility: "Open to all",
+    registrationFee: "₹999",
+    prizes: ["See individual events"],
+    guidelines: [
+      "Participants must follow the rules and regulations of each individual event included in the combo.",
+      "Judges' decisions will be final for all events."
+    ],
+    judgingCriteria: [],
+    disqualificationRules: [],
+    requiresPayment: true,
+    active: true,
+    slug: "combo-2",
+    day: "Multiple Days",
+    isCombo: true,
+    includedEvents: ["Group Dance (Western)", "Battle of Bands", "Fashion Walk"]
+  },
+  {
+    id: "combo03",
+    title: "COMBO 3: DRAMA + MONO ACTING",
+    code: "COMBO03",
+    category: "Cultural",
+    shortDescription: "Drama Competition + Mono Acting bundle.",
+    fullDescription: "Register for both Drama Competition and Mono Acting together.",
+    location: "Multiple Venues",
+    teamSize: "Varies",
+    eligibility: "Open to all",
+    registrationFee: "₹449",
+    prizes: ["See individual events"],
+    guidelines: [
+      "Participants must follow the rules and regulations of each individual event included in the combo.",
+      "Judges' decisions will be final for all events."
+    ],
+    judgingCriteria: [],
+    disqualificationRules: [],
+    requiresPayment: true,
+    active: true,
+    slug: "combo-3",
+    day: "Day 1",
+    isCombo: true,
+    includedEvents: ["Drama Competition", "Mono Acting"]
+  },
+  {
+    id: "combo04",
+    title: "COMBO 4: SHORT FILM + REEL MAKING",
+    code: "COMBO04",
+    category: "Cultural",
+    shortDescription: "Short Film Making + Reel Contest bundle.",
+    fullDescription: "Register for both Short Film Making and Reel Contest together.",
+    location: "L1 Classroom",
+    teamSize: "Varies",
+    eligibility: "Open to all",
+    registrationFee: "₹249",
+    prizes: ["See individual events"],
+    guidelines: [
+      "Participants must follow the rules and regulations of each individual event included in the combo.",
+      "Judges' decisions will be final for all events."
+    ],
+    judgingCriteria: [],
+    disqualificationRules: [],
+    requiresPayment: true,
+    active: true,
+    slug: "combo-4",
+    day: "Day 1",
+    isCombo: true,
+    includedEvents: ["Short Film Making", "Reel Contest"]
   }
 ];
