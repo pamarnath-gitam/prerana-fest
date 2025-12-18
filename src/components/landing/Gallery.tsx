@@ -6,11 +6,11 @@ const images = [
   { src: "https://harmless-tapir-303.convex.cloud/api/storage/b22d21d2-de38-4404-ad2d-a2e803923c87", span: "md:col-span-1 md:row-span-1" },
   { src: "https://harmless-tapir-303.convex.cloud/api/storage/a7281552-3704-4875-9540-df5c0d74010c", span: "md:col-span-1 md:row-span-2" },
   { src: "https://harmless-tapir-303.convex.cloud/api/storage/97be7b71-737a-479c-ad45-8487e55aac2a", span: "md:col-span-1 md:row-span-1" },
-  { src: "https://harmless-tapir-303.convex.cloud/api/storage/4a4483fb-f891-4ba3-ad86-a4101be4ab65", span: "md:col-span-1 md:row-span-1" },
   { src: "https://harmless-tapir-303.convex.cloud/api/storage/fd275c1e-e4c8-4b1b-99ff-f7dc59e42812", span: "md:col-span-2 md:row-span-1" },
+  { src: "https://harmless-tapir-303.convex.cloud/api/storage/4a4483fb-f891-4ba3-ad86-a4101be4ab65", span: "md:col-span-1 md:row-span-1" },
   { src: "https://harmless-tapir-303.convex.cloud/api/storage/26d2793b-cc75-4b2c-8295-a2dd33fc0482", span: "md:col-span-1 md:row-span-1" },
   { src: "https://harmless-tapir-303.convex.cloud/api/storage/be4df044-590b-4e98-888c-bd3070f6ab28", span: "md:col-span-1 md:row-span-1" },
-  { src: "https://harmless-tapir-303.convex.cloud/api/storage/368d82b1-f481-4a85-afe0-8e2f405c6ba4", span: "md:col-span-2 md:row-span-2" },
+  { src: "https://harmless-tapir-303.convex.cloud/api/storage/368d82b1-f481-4a85-afe0-8e2f405c6ba4", span: "md:col-span-2 md:row-span-1" },
 ];
 
 export default function Gallery() {
@@ -22,7 +22,7 @@ export default function Gallery() {
           <p className="text-muted-foreground">Highlights from the previous year.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px] max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px] max-w-6xl mx-auto grid-flow-dense">
           {images.map((img, index) => (
             <motion.div
               key={index}
