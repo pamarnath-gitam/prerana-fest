@@ -2,7 +2,7 @@ import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Code2, Gamepad2, Heart, Music } from "lucide-react";
+import { Code2, Heart, Music } from "lucide-react";
 import { useNavigate } from "react-router";
 
 const categories = [
@@ -29,14 +29,6 @@ const categories = [
     color: "text-green-400",
     bg: "bg-green-400/10",
     slug: "wellness"
-  },
-  {
-    title: "Gaming",
-    description: "Esports tournaments, VR experiences, and casual gaming zones.",
-    icon: Gamepad2,
-    color: "text-red-400",
-    bg: "bg-red-400/10",
-    slug: "gaming"
   }
 ];
 
