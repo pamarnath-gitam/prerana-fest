@@ -1,5 +1,6 @@
 import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter } from "lucide-react";
@@ -15,81 +16,81 @@ const domainTeams = [
   {
     name: "Security",
     roles: [
-      { title: "Head", members: ["M. Venkata Sai Teja"] },
-      { title: "Lead", members: ["Jaswanth Koduri", "Spoorthi S"] },
-      { title: "Co-Lead", members: ["K.B. Dhanush Tej"] },
+      { title: "Head", members: [{ name: "M. Venkata Sai Teja", image: "https://github.com/shadcn.png" }] },
+      { title: "Lead", members: [{ name: "Jaswanth Koduri", image: "https://github.com/shadcn.png" }, { name: "Spoorthi S", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "K.B. Dhanush Tej", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Media",
     roles: [
       { title: "Head", members: [] },
-      { title: "Lead", members: ["G. Sai Krishna"] },
-      { title: "Co-Lead", members: ["Shaik Mohammed Aasim"] },
+      { title: "Lead", members: [{ name: "G. Sai Krishna", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "Shaik Mohammed Aasim", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Design & Media",
     roles: [
-      { title: "Head", members: ["Venkata Vishnu Vardhan Raju"] },
-      { title: "Lead", members: ["M. Dhanunjay Reddy"] },
-      { title: "Co-Lead", members: ["Rishi Lakkoju", "Sohitha"] },
+      { title: "Head", members: [{ name: "Venkata Vishnu Vardhan Raju", image: "https://github.com/shadcn.png" }] },
+      { title: "Lead", members: [{ name: "M. Dhanunjay Reddy", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "Rishi Lakkoju", image: "https://github.com/shadcn.png" }, { name: "Sohitha", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Technology",
     roles: [
-      { title: "Head", members: ["D. Naga Chandra Teja"] },
+      { title: "Head", members: [{ name: "D. Naga Chandra Teja", image: "https://github.com/shadcn.png" }] },
       { title: "Lead", members: [] },
-      { title: "Co-Lead", members: ["Shaik Mohammed Aasim", "Kandala Pavan"] },
+      { title: "Co-Lead", members: [{ name: "Shaik Mohammed Aasim", image: "https://github.com/shadcn.png" }, { name: "Kandala Pavan", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Events",
     roles: [
-      { title: "Head", members: ["B. Neha Reddy"] },
-      { title: "Lead", members: ["Rachel Smita Massey"] },
-      { title: "Co-Lead", members: ["Lanka Darshini Raj", "P. Yathin Bharadwaj"] },
+      { title: "Head", members: [{ name: "B. Neha Reddy", image: "https://github.com/shadcn.png" }] },
+      { title: "Lead", members: [{ name: "Rachel Smita Massey", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "Lanka Darshini Raj", image: "https://github.com/shadcn.png" }, { name: "P. Yathin Bharadwaj", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Marketing",
     roles: [
-      { title: "Head", members: ["Apurva Mishra"] },
-      { title: "Lead", members: ["Manoj Kumar"] },
-      { title: "Co-Lead", members: ["J. Riteesh Reddy"] },
+      { title: "Head", members: [{ name: "Apurva Mishra", image: "https://github.com/shadcn.png" }] },
+      { title: "Lead", members: [{ name: "Manoj Kumar", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "J. Riteesh Reddy", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Operations",
     roles: [
-      { title: "Head", members: ["Singareddy Ruthish Reddy"] },
-      { title: "Lead", members: ["P. Joel Michael Son"] },
-      { title: "Co-Lead", members: ["Allata Harshita"] },
+      { title: "Head", members: [{ name: "Singareddy Ruthish Reddy", image: "https://github.com/shadcn.png" }] },
+      { title: "Lead", members: [{ name: "P. Joel Michael Son", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "Allata Harshita", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Sponsorship",
     roles: [
-      { title: "Head", members: ["K. Sriniwas"] },
-      { title: "Lead", members: ["Sumanth Reddy S"] },
-      { title: "Co-Lead", members: ["Srishti Sucklecha"] },
+      { title: "Head", members: [{ name: "K. Sriniwas", image: "https://github.com/shadcn.png" }] },
+      { title: "Lead", members: [{ name: "Sumanth Reddy S", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "Srishti Sucklecha", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Hospitality",
     roles: [
-      { title: "Head", members: ["A. Jagadeesh", "Prakruthi V"] },
-      { title: "Lead", members: ["Dhruv Jain"] },
-      { title: "Co-Lead", members: ["Sri Nandini T"] },
+      { title: "Head", members: [{ name: "A. Jagadeesh", image: "https://github.com/shadcn.png" }, { name: "Prakruthi V", image: "https://github.com/shadcn.png" }] },
+      { title: "Lead", members: [{ name: "Dhruv Jain", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "Sri Nandini T", image: "https://github.com/shadcn.png" }] },
     ]
   },
   {
     name: "Legal & Documentation",
     roles: [
-      { title: "Head", members: ["Sophiya Sharma"] },
-      { title: "Lead", members: ["Hrishita Rauniyar"] },
-      { title: "Co-Lead", members: ["Unnati Chari"] },
+      { title: "Head", members: [{ name: "Sophiya Sharma", image: "https://github.com/shadcn.png" }] },
+      { title: "Lead", members: [{ name: "Hrishita Rauniyar", image: "https://github.com/shadcn.png" }] },
+      { title: "Co-Lead", members: [{ name: "Unnati Chari", image: "https://github.com/shadcn.png" }] },
     ]
   },
 ];
@@ -180,17 +181,25 @@ export default function Team() {
                     <CardHeader className="pb-2 border-b border-primary/10">
                       <CardTitle className="text-xl text-primary">{team.name}</CardTitle>
                     </CardHeader>
-                    <CardContent className="pt-4 space-y-4">
+                    <CardContent className="pt-4 space-y-6">
                       {team.roles.map((role, rIndex) => (
-                        <div key={rIndex} className="space-y-1">
-                          <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+                        <div key={rIndex} className="space-y-3">
+                          <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest border-b border-primary/10 pb-1">
                             {role.title}
                           </h4>
-                          <div className="text-base">
+                          <div className="flex flex-wrap gap-3">
                             {role.members.length > 0 ? (
-                              role.members.join(", ")
+                              role.members.map((member, mIndex) => (
+                                <div key={mIndex} className="flex items-center gap-3 bg-muted/20 rounded-full pr-4 pl-1 py-1 border border-primary/5 hover:border-primary/20 transition-colors">
+                                  <Avatar className="h-8 w-8 border border-primary/20">
+                                    <AvatarImage src={member.image} alt={member.name} />
+                                    <AvatarFallback>{member.name.charAt(0)}</AvatarFallback>
+                                  </Avatar>
+                                  <span className="text-sm font-medium">{member.name}</span>
+                                </div>
+                              ))
                             ) : (
-                              <span className="text-muted-foreground/50">—</span>
+                              <span className="text-muted-foreground/50 text-sm italic pl-1">Vacant</span>
                             )}
                           </div>
                         </div>
