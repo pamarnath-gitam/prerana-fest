@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -18,20 +18,43 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="font-bold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold text-primary mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><button onClick={() => {
-                const aboutSection = document.getElementById("about");
-                if (aboutSection) {
-                  aboutSection.scrollIntoView({ behavior: "smooth" });
-                } else {
-                  navigate("/#about");
-                }
-              }} className="hover:text-primary transition-colors">About Us</button></li>
-              <li><button onClick={() => navigate("/events")} className="hover:text-primary transition-colors">Events</button></li>
-              <li><button onClick={() => navigate("/sponsors")} className="hover:text-primary transition-colors">Sponsors</button></li>
-              <li><button onClick={() => navigate("/privacy")} className="hover:text-primary transition-colors">Privacy Policy</button></li>
-              <li><button onClick={() => navigate("/terms")} className="hover:text-primary transition-colors">Terms & Conditions</button></li>
+              <li>
+                <Link to="/#about" className="hover:text-primary transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/events" className="hover:text-primary transition-colors">
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link to="/sponsors" className="hover:text-primary transition-colors">
+                  Sponsors
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="hover:text-primary transition-colors">
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link to="/security-guidelines" className="hover:text-primary transition-colors">
+                  Security Guidelines
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="hover:text-primary transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms" className="hover:text-primary transition-colors">
+                  Terms & Conditions
+                </Link>
+              </li>
             </ul>
           </div>
 

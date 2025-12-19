@@ -12,6 +12,8 @@ export default function Navbar() {
     { name: "Events", href: "/events" },
     { name: "Schedule", href: "/#schedule" },
     { name: "Sponsors", href: "/sponsors" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Security", href: "/security-guidelines" },
   ];
 
   return (
