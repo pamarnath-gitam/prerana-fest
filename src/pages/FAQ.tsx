@@ -165,7 +165,7 @@ export default function FAQ() {
             },
             {
               question: "Is there a lost-and-found desk?",
-              answer: "Yes. A dedicated desk will operate during fest hours. Lost items can also be reported via prerana@gitam.edu."
+              answer: "Yes. A dedicated desk will operate during fest hours. Lost items can also be reported via prerana@gitam.in."
             }
           ]
         },
