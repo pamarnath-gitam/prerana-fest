@@ -63,5 +63,3 @@ export function LogoDropdown() {
     </DropdownMenu>
   );
 }
-
-export default LogoDropdown;
