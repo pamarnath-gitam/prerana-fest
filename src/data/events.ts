@@ -93,7 +93,7 @@ export const events: Event[] = [
     requiresPayment: true,
     active: true,
     slug: "maze-finder-mouse",
-    day: "Day 1"
+    day: "Day 2"
   },
   {
     id: "tech06",
