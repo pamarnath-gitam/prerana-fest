@@ -114,20 +114,23 @@ export default function Team() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="space-y-20"
+          className="space-y-24"
         >
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-primary">
               Meet the Team
             </h1>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               The passionate individuals behind Prerana 2026 working hard to make it a memorable experience.
             </p>
           </div>
 
           {/* Leadership Section */}
-          <section className="space-y-8">
-            <h2 className="text-3xl font-bold text-center text-secondary">Leadership</h2>
+          <section className="space-y-12">
+            <div className="text-center space-y-4">
+               <h2 className="text-3xl font-bold text-secondary">Leadership</h2>
+               <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {leadership.map((member, index) => (
                 <motion.div
@@ -136,10 +139,10 @@ export default function Team() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-colors h-full flex flex-col justify-center items-center py-8">
-                    <CardHeader className="text-center pb-0">
-                      <CardTitle className="text-2xl font-bold">{member.name}</CardTitle>
-                      <p className="text-lg text-primary font-medium">{member.role}</p>
+                  <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col justify-center items-center py-10 px-6">
+                    <CardHeader className="text-center p-0 space-y-2">
+                      <CardTitle className="text-2xl font-bold tracking-tight">{member.name}</CardTitle>
+                      <p className="text-lg text-primary font-medium tracking-wide uppercase">{member.role}</p>
                     </CardHeader>
                   </Card>
                 </motion.div>
@@ -148,8 +151,11 @@ export default function Team() {
           </section>
 
           {/* Domain Teams Section */}
-          <section className="space-y-12">
-            <h2 className="text-3xl font-bold text-center text-secondary">Domain Teams</h2>
+          <section className="space-y-16">
+            <div className="text-center space-y-4">
+               <h2 className="text-3xl font-bold text-secondary">Domain Teams</h2>
+               <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {domainTeams.map((team, index) => {
                 // Check if team has any members
@@ -163,24 +169,24 @@ export default function Team() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 + index * 0.05 }}
                   >
-                    <Card className="bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/40 transition-all h-full">
-                      <CardHeader className="pb-4 border-b border-primary/10">
-                        <CardTitle className="text-2xl text-primary text-center">{team.name}</CardTitle>
+                    <Card className="bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-md h-full flex flex-col">
+                      <CardHeader className="pb-6 border-b border-primary/10 bg-primary/5">
+                        <CardTitle className="text-2xl text-primary text-center font-bold tracking-tight">{team.name}</CardTitle>
                       </CardHeader>
-                      <CardContent className="pt-6 space-y-6">
+                      <CardContent className="pt-8 space-y-8 flex-1">
                         {team.roles.map((role, rIndex) => {
                           // Filter out empty roles
                           if (role.members.length === 0) return null;
                           
                           return (
-                            <div key={rIndex} className="space-y-2 text-center">
-                              <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
+                            <div key={rIndex} className="space-y-3 text-center">
+                              <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] border-b border-border/50 pb-1 inline-block px-4">
                                 {role.title}
                               </h4>
-                              <div className="flex flex-wrap justify-center gap-2">
+                              <div className="flex flex-wrap justify-center gap-3">
                                 {role.members.map((member, mIndex) => (
-                                  <div key={mIndex} className="px-3 py-1 bg-muted/20 rounded-md border border-primary/5 hover:border-primary/20 transition-colors">
-                                    <span className="text-base font-medium">{member.name}</span>
+                                  <div key={mIndex} className="px-4 py-2 bg-background/50 rounded-lg border border-primary/10 hover:border-primary/30 transition-colors shadow-sm">
+                                    <span className="text-base font-medium text-foreground/90">{member.name}</span>
                                   </div>
                                 ))}
                               </div>
@@ -196,19 +202,22 @@ export default function Team() {
           </section>
 
           {/* Advisory Committee Section */}
-          <section className="space-y-8">
-            <h2 className="text-3xl font-bold text-center text-secondary">Advisory Committee</h2>
-            <p className="text-center text-muted-foreground -mt-6">Faculty Support</p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+          <section className="space-y-12">
+             <div className="text-center space-y-4">
+               <h2 className="text-3xl font-bold text-secondary">Advisory Committee</h2>
+               <p className="text-muted-foreground text-lg">Faculty Support</p>
+               <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
+            </div>
+            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
               {advisoryCommittee.map((member, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.4 + index * 0.05 }}
-                  className="bg-muted/10 border border-primary/10 rounded-lg p-4 text-center hover:bg-primary/5 hover:border-primary/30 transition-colors flex items-center justify-center"
+                  className="bg-muted/10 border border-primary/10 rounded-xl px-8 py-4 text-center hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 cursor-default min-w-[200px]"
                 >
-                  <span className="font-medium text-lg">{member}</span>
+                  <span className="font-medium text-lg tracking-wide">{member}</span>
                 </motion.div>
               ))}
             </div>
