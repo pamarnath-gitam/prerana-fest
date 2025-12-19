@@ -52,9 +52,6 @@ export default function Navbar() {
             <Link to="/sponsors" className="text-sm font-medium hover:text-primary transition-colors">
               Sponsors
             </Link>
-            <Link to="/security-guidelines" className="text-sm font-medium hover:text-primary transition-colors flex items-center gap-1">
-              <ShieldAlert className="w-4 h-4" /> Security
-            </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-4">
@@ -66,13 +63,6 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 >
                   Sponsors
-                </Link>
-                <Link
-                  to="/security-guidelines"
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/10 hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Security Guidelines
                 </Link>
                 {isAuthenticated ? (
                   <div className="px-3 py-2">

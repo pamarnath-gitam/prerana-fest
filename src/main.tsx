@@ -19,7 +19,6 @@ const Gallery = lazy(() => import("./pages/Gallery.tsx"));
 const Sponsors = lazy(() => import("./pages/Sponsors.tsx"));
 const Privacy = lazy(() => import("./pages/Privacy.tsx"));
 const Terms = lazy(() => import("./pages/Terms.tsx"));
-const SecurityGuidelines = lazy(() => import("./pages/SecurityGuidelines.tsx"));
 
 // Simple loading fallback for route transitions
 function RouteLoading() {
@@ -75,7 +74,6 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/sponsors/partner-with-us" element={<Sponsors />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
-              <Route path="/security-guidelines" element={<SecurityGuidelines />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
