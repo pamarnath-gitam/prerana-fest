@@ -28,21 +28,10 @@ export default function Footer() {
                   navigate("/#about");
                 }
               }} className="hover:text-primary transition-colors">About Us</button></li>
-              <li><Link to="/events" className="text-muted-foreground hover:text-primary transition-colors">
-                Events
-              </Link></li>
-              <li><Link to="/sponsors" className="text-muted-foreground hover:text-primary transition-colors">
-                Sponsors
-              </Link></li>
-              <li><Link to="/security-guidelines" className="text-muted-foreground hover:text-primary transition-colors">
-                Security Guidelines
-              </Link></li>
-              <li><Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">
-                Privacy Policy
-              </Link></li>
-              <li><Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
-                Terms & Conditions
-              </Link></li>
+              <li><button onClick={() => navigate("/events")} className="hover:text-primary transition-colors">Events</button></li>
+              <li><button onClick={() => navigate("/sponsors")} className="hover:text-primary transition-colors">Sponsors</button></li>
+              <li><button onClick={() => navigate("/privacy")} className="hover:text-primary transition-colors">Privacy Policy</button></li>
+              <li><button onClick={() => navigate("/terms")} className="hover:text-primary transition-colors">Terms & Conditions</button></li>
             </ul>
           </div>
 
