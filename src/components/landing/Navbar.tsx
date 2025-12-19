@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Menu, X, ShieldAlert } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
-import LogoDropdown from "../LogoDropdown";
+import { LogoDropdown } from "../LogoDropdown";
 import { useAuth } from "@/hooks/use-auth";
 
 export default function Navbar() {
