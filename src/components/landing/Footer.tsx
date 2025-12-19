@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -17,22 +18,14 @@ export default function Footer() {
             </p>
           </div>
 
-          <div>
-            <h3 className="font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><button onClick={() => {
-                const aboutSection = document.getElementById("about");
-                if (aboutSection) {
-                  aboutSection.scrollIntoView({ behavior: "smooth" });
-                } else {
-                  navigate("/#about");
-                }
-              }} className="hover:text-primary transition-colors">About Us</button></li>
-              <li><button onClick={() => navigate("/events")} className="hover:text-primary transition-colors">Events</button></li>
-              <li><button onClick={() => navigate("/sponsors")} className="hover:text-primary transition-colors">Sponsors</button></li>
-              <li><button onClick={() => navigate("/privacy")} className="hover:text-primary transition-colors">Privacy Policy</button></li>
-              <li><button onClick={() => navigate("/terms")} className="hover:text-primary transition-colors">Terms & Conditions</button></li>
-            </ul>
+          <div className="flex flex-col gap-2">
+            <h3 className="font-bold text-lg mb-2">Quick Links</h3>
+            <Link to="/#about" className="text-muted-foreground hover:text-primary transition-colors">About Us</Link>
+            <Link to="/events" className="text-muted-foreground hover:text-primary transition-colors">Events</Link>
+            <Link to="/sponsors" className="text-muted-foreground hover:text-primary transition-colors">Sponsors</Link>
+            <Link to="/security-guidelines" className="text-muted-foreground hover:text-primary transition-colors">Security Guidelines</Link>
+            <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">Terms & Conditions</Link>
           </div>
 
           <div>
