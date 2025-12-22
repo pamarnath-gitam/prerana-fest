@@ -2,7 +2,6 @@ import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
 import { Download } from "lucide-react";
 import { useQuery } from "convex/react";
@@ -24,11 +23,8 @@ export default function Sponsors() {
       <Navbar />
       <main className="pt-24 pb-20 relative z-10">
         <div className="container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+          <div 
+            className="text-center mb-16 animate-in fade-in slide-in-from-bottom-4 duration-500"
           >
             <h1 className="text-5xl font-bold mb-6">Our Sponsors</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -37,14 +33,11 @@ export default function Sponsors() {
             <Button onClick={() => navigate("/sponsors/partner-with-us")}>
               Partner With Us
             </Button>
-          </motion.div>
+          </div>
 
           {/* Sponsorship Brochure Placeholder */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="max-w-xl mx-auto mb-20"
+          <div 
+            className="max-w-xl mx-auto mb-20 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200"
           >
             <Card className="border-primary/20 bg-card/50 backdrop-blur-sm">
               <CardContent className="flex flex-col items-center p-8 text-center">
@@ -57,12 +50,12 @@ export default function Sponsors() {
                 </p>
                 <Button size="lg" className="w-full sm:w-auto" asChild>
                   <a href={brochureUrl} target="_blank" rel="noopener noreferrer">
-                    Download Brochure (PDF = "file:///C:/Users/701028/Downloads/Sponsorship%20Brouchure%20%23CMYK_compressed.pdf")
+                    Download Brochure (PDF)
                   </a>
                 </Button>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         </div>
       </main>
       <Footer />
