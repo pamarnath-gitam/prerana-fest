@@ -878,7 +878,7 @@ export const events: Event[] = [
   },
   {
     id: "well05",
-    title: "PHOTO BOOTH (DAY 1)",
+    title: "PHOTO BOOTH (DAY 1 and DAY 2)",
     code: "WELL05",
     category: "Wellness",
     shortDescription: "Wellness-themed photo booth with aesthetic backdrops.",
@@ -893,13 +893,13 @@ export const events: Event[] = [
     disqualificationRules: [],
     requiresPayment: false,
     active: true,
-    slug: "photo-booth-day-1",
-    day: "Day 1",
-    timeLimit: "10:30 am – 04:00 pm"
+    slug: "photo-booth",
+    day: "Day 1 & 2",
+    timeLimit: "10:00 am – 04:00 pm"
   },
   {
     id: "well06",
-    title: "UDAAN RESOURCE CORNER (DAY 1)",
+    title: "RESOURCE CORNER (DAY 1 and 2)",
     code: "WELL06",
     category: "Wellness",
     shortDescription: "Information desk for counseling and wellness resources.",
@@ -914,9 +914,9 @@ export const events: Event[] = [
     disqualificationRules: [],
     requiresPayment: false,
     active: true,
-    slug: "udaan-resource-corner-day-1",
-    day: "Day 1",
-    timeLimit: "10:30 am – 04:00 pm"
+    slug: "resource-corner",
+    day: "Day 1 & 2",
+    timeLimit: "10:00 am – 04:00 pm"
   },
   {
     id: "well07",
@@ -982,27 +982,6 @@ export const events: Event[] = [
     timeLimit: "01:00 pm – 04:00 pm"
   },
   {
-    id: "well10",
-    title: "UDAAN RESOURCE CORNER (DAY 2)",
-    code: "WELL10",
-    category: "Wellness",
-    shortDescription: "Information desk for counseling and wellness resources.",
-    fullDescription: "An information desk providing details on counselling services, stress management, crisis helplines, and personal development resources. Trained volunteers guide students confidentially.",
-    location: "Heritage Area",
-    teamSize: "Open to all",
-    eligibility: "Open to all",
-    registrationFee: "Free",
-    prizes: [],
-    guidelines: ["Confidentiality assured"],
-    judgingCriteria: [],
-    disqualificationRules: [],
-    requiresPayment: false,
-    active: true,
-    slug: "udaan-resource-corner-day-2",
-    day: "Day 2",
-    timeLimit: "10:00 am – 04:00 pm"
-  },
-  {
     id: "well11",
     title: "MAKE ME SMILE BOOTH",
     code: "WELL11",
@@ -1020,27 +999,6 @@ export const events: Event[] = [
     requiresPayment: false,
     active: true,
     slug: "make-me-smile-booth",
-    day: "Day 2",
-    timeLimit: "10:00 am – 04:00 pm"
-  },
-  {
-    id: "well12",
-    title: "PHOTO BOOTH (DAY 2)",
-    code: "WELL12",
-    category: "Wellness",
-    shortDescription: "Wellness-themed photo booth with aesthetic backdrops.",
-    fullDescription: "A beautifully decorated wellness-themed photo booth with aesthetic backdrops, pastel props, and inspirational taglines designed to spread wellness positivity across campus and social media.",
-    location: "Heritage Area",
-    teamSize: "Open to all",
-    eligibility: "Open to all",
-    registrationFee: "Free",
-    prizes: [],
-    guidelines: ["Share the positivity"],
-    judgingCriteria: [],
-    disqualificationRules: [],
-    requiresPayment: false,
-    active: true,
-    slug: "photo-booth-day-2",
     day: "Day 2",
     timeLimit: "10:00 am – 04:00 pm"
   }
