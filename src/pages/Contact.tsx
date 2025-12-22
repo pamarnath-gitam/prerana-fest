@@ -1,30 +1,10 @@
 import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Send, ShieldAlert, User } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
+import { Mail, MapPin, ShieldAlert, User } from "lucide-react";
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    toast.success("Message sent successfully!", {
-      description: "We'll get back to you within 24-48 hours.",
-    });
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 flex flex-col">
       <Navbar />
@@ -44,7 +24,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="max-w-3xl mx-auto">
             {/* Contact Info Column */}
             <div className="space-y-6">
               {/* General & Location */}
@@ -136,66 +116,6 @@ export default function Contact() {
                       <a href="tel:+919113815655" className="text-sm hover:text-primary transition-colors">+91 91138 15655</a>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Contact Form Column */}
-            <div className="space-y-6">
-              <Card className="bg-card/50 backdrop-blur-sm border-primary/20 h-full">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">Your Name</label>
-                      <Input id="name" placeholder="John Doe" required className="bg-background/50" />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">Your Email</label>
-                      <Input id="email" type="email" placeholder="john@example.com" required className="bg-background/50" />
-                    </div>
-
-                    <div className="space-y-2">
-                      <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                      <Select name="subject" required>
-                        <SelectTrigger className="bg-background/50">
-                          <SelectValue placeholder="Select a topic" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="general">General Query</SelectItem>
-                          <SelectItem value="registration">Registration Issue</SelectItem>
-                          <SelectItem value="payment">Payment Issue</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">Message</label>
-                      <Textarea 
-                        id="message" 
-                        placeholder="How can we help you?" 
-                        required 
-                        className="min-h-[150px] bg-background/50" 
-                      />
-                    </div>
-
-                    <div className="pt-2">
-                      <Button type="submit" className="w-full" disabled={isSubmitting}>
-                        {isSubmitting ? "Sending..." : (
-                          <>
-                            Send Message <Send className="ml-2 h-4 w-4" />
-                          </>
-                        )}
-                      </Button>
-                      <p className="text-xs text-muted-foreground text-center mt-4">
-                        Please allow 24–48 hours for a response.
-                      </p>
-                    </div>
-                  </form>
                 </CardContent>
               </Card>
             </div>
