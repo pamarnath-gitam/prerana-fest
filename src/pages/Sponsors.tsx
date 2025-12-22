@@ -55,7 +55,7 @@ export default function Sponsors() {
                   <a href="/Sponsorship_Brochure.pdf" target="_blank" rel="noopener noreferrer">
                     Download Brochure (PDF)
                   </a>
-                </Button> =  "file:///C:/Users/701028/Downloads/Sponsorship%20Brouchure%20%23CMYK_compressed.pdf" 
+                </Button>
               </CardContent>
             </Card>
           </motion.div>
