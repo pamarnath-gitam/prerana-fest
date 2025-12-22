@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
+import { Download } from "lucide-react";
 
 export default function Sponsors() {
   const navigate = useNavigate();
@@ -32,6 +33,32 @@ export default function Sponsors() {
             <Button onClick={() => navigate("/sponsors/partner-with-us")}>
               Partner With Us
             </Button>
+          </motion.div>
+
+          {/* Sponsorship Brochure Placeholder */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="max-w-xl mx-auto mb-20"
+          >
+            <Card className="border-primary/20 bg-card/50 backdrop-blur-sm">
+              <CardContent className="flex flex-col items-center p-8 text-center">
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <Download className="h-6 w-6 text-primary" />
+                </div>
+                <h2 className="text-2xl font-bold mb-2">Sponsorship Brochure</h2>
+                <p className="text-muted-foreground mb-6">
+                  Download our detailed sponsorship brochure to explore partnership tiers, benefits, and opportunities for Prerana 2026.
+                </p>
+                <Button size="lg" className="w-full sm:w-auto" asChild>
+                  {/* TODO: Replace '#' with the actual PDF link provided by the user */}
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    Download Brochure (PDF)
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
       </main>
