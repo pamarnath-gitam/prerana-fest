@@ -39,7 +39,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg mb-1">General Contact</h3>
-                      <p className="text-muted-foreground">prerana@gitam.in</p>
+                      <p className="text-muted-foreground">preranablr@gitam.in</p>
                       <p className="text-xs text-muted-foreground mt-1">
                         (All queries—registration, events, media, sponsorship—are routed centrally.)
                       </p>
