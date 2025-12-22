@@ -1,6 +1,5 @@
 import About from "@/components/landing/About";
 import CtaBar from "@/components/landing/CtaBar";
-import FeaturedEvents from "@/components/landing/FeaturedEvents";
 import Footer from "@/components/landing/Footer";
 import Gallery from "@/components/landing/Gallery";
 import Hero from "@/components/landing/Hero";
@@ -19,7 +18,6 @@ export default function Landing() {
       <main>
         <Hero />
         <About />
-        <FeaturedEvents />
         <Schedule />
         <Gallery />
         <CtaBar />
