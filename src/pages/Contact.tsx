@@ -93,15 +93,6 @@ export default function Contact() {
                   <div className="flex items-start gap-3">
                     <User className="h-5 w-5 text-primary mt-1 shrink-0" />
                     <div>
-                      <p className="font-semibold">Pranav</p>
-                      <p className="text-sm text-muted-foreground">Faculty Coordinator</p>
-                      <a href="tel:+919113583435" className="text-sm hover:text-primary transition-colors">+91 91135 83435</a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <User className="h-5 w-5 text-primary mt-1 shrink-0" />
-                    <div>
                       <p className="font-semibold">Sriniwas</p>
                       <p className="text-sm text-muted-foreground">Head – Sponsorship</p>
                       <a href="tel:+919883790337" className="text-sm hover:text-primary transition-colors">+91 98837 90337</a>
