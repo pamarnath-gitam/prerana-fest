@@ -43,7 +43,7 @@ export default function Hero() {
       {/* Video Container - Aspect Ratio 16:9 to match YouTube and avoid clipping */}
       <div className="relative w-full aspect-video bg-black overflow-hidden">
         <iframe
-          src="<iframe width="560" height="315" src="https://www.youtube.com/embed/oouLiRSEI1U?si=_NyHq_XwlWqfivja" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> ""
+          src="https://www.youtube.com/embed/oouLiRSEI1U?autoplay=1&mute=1&controls=0&loop=1&playlist=oouLiRSEI1U"
           className="absolute inset-0 w-full h-full"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           title="Hero Background"
