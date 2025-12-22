@@ -50,7 +50,7 @@ export default function Sponsors() {
                 </p>
                 <Button size="lg" className="w-full sm:w-auto" asChild>
                   <a href={brochureUrl} target="_blank" rel="noopener noreferrer">
-                    Download Brochure (PDF)
+                    Download Brochure (PDF =  "https://drive.google.com/file/d/1h3otPN3dF2iYaPQRprG920MFgeIx9trJ/view?usp=drive_link")
                   </a>
                 </Button>
               </CardContent>
