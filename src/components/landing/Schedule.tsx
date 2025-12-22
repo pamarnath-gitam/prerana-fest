@@ -5,20 +5,39 @@ import { motion } from "framer-motion";
 
 const schedule = {
   day1: [
-    { time: "09:00 AM", event: "Inauguration Ceremony", category: "General", location: "Main Auditorium" },
-    { time: "10:30 AM", event: "Hackathon Kickoff", category: "Technical", location: "Lab Complex" },
-    { time: "11:00 AM", event: "Art Exhibition Opening", category: "Cultural", location: "Student Center" },
-    { time: "02:00 PM", event: "Tech Talk: AI Future", category: "Technical", location: "Seminar Hall 1" },
-    { time: "04:00 PM", event: "Fashion Show", category: "Cultural", location: "Main Auditorium" },
-    { time: "06:00 PM", event: "Battle of Bands", category: "Cultural", location: "Open Air Theatre" },
+    { time: "09:00 AM – 09:30 AM", event: "Torch Relay & Flag Hoisting", category: "Ceremony", location: "Underpass to Shivaji Bhavan" },
+    { time: "09:30 AM – 09:45 AM", event: "Inauguration & Flag Hoisting", category: "Ceremony", location: "SB Portico" },
+    { time: "09:45 AM – 09:50 AM", event: "SPICMACAY Performance", category: "Cultural", location: "In front of SB" },
+    { time: "09:50 AM – 10:00 AM", event: "Ethnic Procession (Chenda Mela)", category: "Cultural", location: "Main Gate to SB" },
+    { time: "10:00 AM – 10:30 AM", event: "Chenda Mela Performance", category: "Cultural", location: "In front of SB" },
+    { time: "10:30 AM – 04:00 PM", event: "Wellness Zone Activities", category: "Wellness", location: "Opposite to Vinaysadan Lawn" },
+    { time: "11:00 AM – 04:00 PM", event: "Project Expo", category: "Technical", location: "VDC (Innovation Street)" },
+    { time: "10:30 AM – 01:30 PM", event: "Gamethon — Theme Reveal & Start", category: "Technical", location: "VB 501" },
+    { time: "10:30 AM – 11:20 AM", event: "Solo Singing", category: "Cultural", location: "Auditorium" },
+    { time: "10:30 AM – 11:30 AM", event: "Short Film Making", category: "Cultural", location: "VB 203" },
+    { time: "11:30 AM – 12:40 PM", event: "Battle of Bands", category: "Cultural", location: "Auditorium" },
+    { time: "01:00 PM – 02:20 PM", event: "Fashion Walk", category: "Cultural", location: "Auditorium" },
+    { time: "01:30 PM – 02:00 PM", event: "Gamethon Judgement", category: "Technical", location: "VB 501" },
+    { time: "02:30 PM – 03:20 PM", event: "Drama Competition", category: "Cultural", location: "Auditorium" },
+    { time: "03:20 PM – 04:00 PM", event: "Mono Acting", category: "Cultural", location: "Auditorium" },
+    { time: "04:00 PM – 04:30 PM", event: "Project Expo Judgement", category: "Technical", location: "VDC" },
+    { time: "04:00 PM – 05:30 PM", event: "Army Band Performance", category: "Cultural", location: "Main Stage" },
+    { time: "06:00 PM – 08:30 PM", event: "Band Performance with Artist", category: "Cultural", location: "Main Stage" },
   ],
   day2: [
-    { time: "07:00 AM", event: "Sunrise Yoga", category: "Wellness", location: "Sports Ground" },
-    { time: "10:00 AM", event: "Robo Wars", category: "Technical", location: "Central Courtyard" },
-    { time: "01:00 PM", event: "Dance Competition", category: "Cultural", location: "Main Auditorium" },
-    { time: "03:00 PM", event: "Mental Health Workshop", category: "Wellness", location: "Seminar Hall 2" },
-    { time: "05:00 PM", event: "Valedictory Ceremony", category: "General", location: "Main Auditorium" },
-    { time: "07:00 PM", event: "Star Night Concert", category: "Cultural", location: "Open Air Theatre" },
+    { time: "07:30 AM – 08:00 AM", event: "Yoga Session", category: "Wellness", location: "Opposite to Vinaysadan Lawn" },
+    { time: "08:00 AM – 08:30 AM", event: "Rise of Hope (Balloon Release)", category: "Ceremony", location: "Basketball Court" },
+    { time: "09:00 AM – 05:00 PM", event: "Hackathon — 8 Hour Sprint", category: "Technical", location: "VDC (Alpha, Beta & Gamma)" },
+    { time: "10:00 AM – 04:00 PM", event: "Wellness Zones", category: "Wellness", location: "Opposite to Vinaysadan Lawn" },
+    { time: "10:00 AM – 10:50 AM", event: "Solo Dance (Indian)", category: "Cultural", location: "Auditorium" },
+    { time: "10:00 AM – 12:00 PM", event: "Treasure Hunt", category: "Wellness", location: "Opposite to Vinaysadan Lawn" },
+    { time: "12:00 PM – 01:00 PM", event: "Maze Finder Mouse", category: "Technical", location: "VDC (Kojo)" },
+    { time: "01:00 PM – 02:00 PM", event: "Lunch Break", category: "General", location: "Campus" },
+    { time: "02:00 PM – 03:00 PM", event: "Drone Workshop (Demo)", category: "Technical", location: "VB 204" },
+    { time: "02:00 PM – 04:00 PM", event: "Art Therapy Corner", category: "Wellness", location: "Opposite to Vinaysadan Lawn" },
+    { time: "04:20 PM – 04:30 PM", event: "Introduction by MC", category: "Ceremony", location: "Main Stage" },
+    { time: "04:30 PM – 05:25 PM", event: "Cultural Showcase", category: "Cultural", location: "Main Stage" },
+    { time: "06:00 PM – 08:30 PM", event: "DJ Night", category: "Cultural", location: "Main Stage" },
   ],
 };
 
@@ -39,8 +58,8 @@ export default function Schedule() {
 
         <Tabs defaultValue="day1" className="max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-2 mb-8">
-            <TabsTrigger value="day1">Day 1 (Jan 23)</TabsTrigger>
-            <TabsTrigger value="day2">Day 2 (Jan 24)</TabsTrigger>
+            <TabsTrigger value="day1">Day 1 (Jan 22)</TabsTrigger>
+            <TabsTrigger value="day2">Day 2 (Jan 23)</TabsTrigger>
           </TabsList>
 
           {Object.entries(schedule).map(([day, events]) => (
@@ -56,7 +75,7 @@ export default function Schedule() {
                     <Card className="hover:bg-muted/50 transition-colors border-l-4 border-l-primary">
                       <CardContent className="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div className="flex items-center gap-6">
-                          <div className="text-lg font-bold text-primary w-24">{item.time}</div>
+                          <div className="text-sm font-bold text-primary w-32 shrink-0">{item.time}</div>
                           <div>
                             <h3 className="text-xl font-semibold">{item.event}</h3>
                             <p className="text-sm text-muted-foreground">{item.location}</p>
@@ -66,7 +85,7 @@ export default function Schedule() {
                           item.category === "Technical" ? "default" :
                           item.category === "Cultural" ? "secondary" :
                           item.category === "Wellness" ? "outline" : "destructive"
-                        } className="w-fit">
+                        } className="w-fit shrink-0">
                           {item.category}
                         </Badge>
                       </CardContent>
