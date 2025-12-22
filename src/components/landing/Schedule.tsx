@@ -2,8 +2,170 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const schedule = {
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+export default function Schedule() {
+  return (
+    <section id="schedule" className="py-20 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-muted/10 rounded-full blur-3xl animate-pulse delay-700" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4">Event Schedule</h2>
+          <p className="text-muted-foreground">Don't miss out on any of the action.</p>
+        </div>
+
+        <Tabs defaultValue="day1" className="max-w-4xl mx-auto">
+          <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsTrigger value="day1">Day 1 (Jan 22)</TabsTrigger>
+            <TabsTrigger value="day2">Day 2 (Jan 23)</TabsTrigger>
+          </TabsList>
+
+          {Object.entries(schedule).map(([day, events]) => (
+            <TabsContent key={day} value={day}>
+              <div className="space-y-4">
+                {events.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <Card className="hover:bg-muted/50 transition-colors border-l-4 border-l-primary">
+                      <CardContent className="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div className="flex items-center gap-6">
+                          <div className="text-sm font-bold text-primary w-32 shrink-0">{item.time}</div>
+                          <div>
+                            <h3 className="text-xl font-semibold">{item.event}</h3>
+                            <p className="text-sm text-muted-foreground">{item.location}</p>
+                          </div>
+                        </div>
+                        <Badge variant={
+                          item.category === "Technical" ? "default" :
+                          item.category === "Cultural" ? "secondary" :
+                          item.category === "Wellness" ? "outline" : "destructive"
+                        } className="w-fit shrink-0">
+                          {item.category}
+                        </Badge>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+      </div>
+    </section>
+  );
+}
+=======
+export default function Schedule() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = ["All", "Main Events", "Cultural", "Technology", "Wellness"];
+
+  const filterEvents = (events: typeof schedule.day1) => {
+    return events.filter((item) => {
+      if (activeCategory === "All") return true;
+      if (activeCategory === "Main Events") return item.category === "Ceremony" || item.location.includes("Main Stage");
+      if (activeCategory === "Cultural") return item.category === "Cultural";
+      if (activeCategory === "Technology") return item.category === "Technical";
+      if (activeCategory === "Wellness") return item.category === "Wellness";
+      return true;
+    });
+  };
+
+  return (
+    <section id="schedule" className="py-20 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 right-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-muted/10 rounded-full blur-3xl animate-pulse delay-700" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold mb-4">Event Schedule</h2>
+          <p className="text-muted-foreground">Don't miss out on any of the action.</p>
+        </div>
+
+        <Tabs defaultValue="day1" className="max-w-4xl mx-auto">
+          <TabsList className="grid w-full grid-cols-2 mb-8">
+            <TabsTrigger value="day1">Day 1 (Jan 22)</TabsTrigger>
+            <TabsTrigger value="day2">Day 2 (Jan 23)</TabsTrigger>
+          </TabsList>
+
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={cn(
+                  "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200",
+                  activeCategory === category
+                    ? "bg-primary text-primary-foreground shadow-lg scale-105"
+                    : "bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground"
+                )}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {Object.entries(schedule).map(([day, events]) => (
+            <TabsContent key={day} value={day}>
+              <div className="space-y-4 min-h-[400px]">
+                {filterEvents(events).length > 0 ? (
+                  filterEvents(events).map((item, index) => (
+                    <motion.div
+                      key={`${day}-${index}-${item.event}`}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.05 }}
+                    >
+                      <Card className="hover:bg-muted/50 transition-colors border-l-4 border-l-primary">
+                        <CardContent className="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                          <div className="flex items-center gap-6">
+                            <div className="text-sm font-bold text-primary w-32 shrink-0">{item.time}</div>
+                            <div>
+                              <h3 className="text-xl font-semibold">{item.event}</h3>
+                              <p className="text-sm text-muted-foreground">{item.location}</p>
+                            </div>
+                          </div>
+                          <Badge variant={
+                            item.category === "Technical" ? "default" :
+                            item.category === "Cultural" ? "secondary" :
+                            item.category === "Wellness" ? "outline" : "destructive"
+                          } className="w-fit shrink-0">
+                            {item.category}
+                          </Badge>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))
+                ) : (
+                  <div className="text-center py-12 text-muted-foreground">
+                    No events found for this category on this day.
+                  </div>
+                )}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
+      </div>
+    </section>
+  );
+}
   day1: [
     { time: "09:00 AM – 09:30 AM", event: "Torch Relay & Flag Hoisting", category: "Ceremony", location: "Underpass to Shivaji Bhavan" },
     { time: "09:30 AM – 09:45 AM", event: "Inauguration & Flag Hoisting", category: "Ceremony", location: "SB Portico" },
