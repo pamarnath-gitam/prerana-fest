@@ -5,9 +5,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
 import { Download } from "lucide-react";
+import { useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
 
 export default function Sponsors() {
   const navigate = useNavigate();
+  const uploadedBrochureUrl = useQuery(api.documents.getBrochure);
+  const brochureUrl = uploadedBrochureUrl || "/Sponsorship_Brochure.pdf";
 
   return (
     <div className="min-h-screen bg-background text-foreground font-sans relative overflow-hidden">
@@ -52,7 +56,7 @@ export default function Sponsors() {
                   Download our detailed sponsorship brochure to explore partnership tiers, benefits, and opportunities for Prerana 2026.
                 </p>
                 <Button size="lg" className="w-full sm:w-auto" asChild>
-                  <a href="/Sponsorship_Brochure.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href={brochureUrl} target="_blank" rel="noopener noreferrer">
                     Download Brochure (PDF)
                   </a>
                 </Button>
