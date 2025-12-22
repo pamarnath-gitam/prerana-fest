@@ -54,7 +54,7 @@ export default function Sponsors() {
                 <Button size="lg" className="w-full sm:w-auto" asChild>
                   {/* TODO: Replace '#' with the actual PDF link provided by the user */}
                   <a href="#" target="_blank" rel="noopener noreferrer">
-                    Download Brochure (PDF)
+                    Download Brochure (PDF) = "file:///C:/Users/701028/Downloads/Sponsorship%20Brouchure%20%23CMYK_compressed.pdf"
                   </a>
                 </Button>
               </CardContent>
