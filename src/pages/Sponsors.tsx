@@ -52,8 +52,7 @@ export default function Sponsors() {
                   Download our detailed sponsorship brochure to explore partnership tiers, benefits, and opportunities for Prerana 2026.
                 </p>
                 <Button size="lg" className="w-full sm:w-auto" asChild>
-                  {/* TODO: Replace '#' with the actual PDF link provided by the user */}
-                  <a href="file:///C:/Users/701028/Downloads/Sponsorship%20Brouchure%20%23CMYK_compressed.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="/Sponsorship_Brochure.pdf" target="_blank" rel="noopener noreferrer">
                     Download Brochure (PDF)
                   </a>
                 </Button>
