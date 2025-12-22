@@ -54,31 +54,32 @@
   --card-foreground: #FAFAFA;
   --popover: #080C08;
   --popover-foreground: #FAFAFA;
-  --primary: #FF6600;
-  --primary-foreground: #FAFAFA;
-  --secondary: #FFA51F;
-  --secondary-foreground: #080C08;
+  --primary: #FFA51F;
+  --primary-foreground: #080C08;
+  --secondary: #CC0000;
+  --secondary-foreground: #FAFAFA;
   --muted: #401268;
   --muted-foreground: #FAFAFA;
   --accent: #051B7F;
   --accent-foreground: #FAFAFA;
-  --destructive: #FF6600;
+  --destructive: #CC0000;
+  --destructive-foreground: #FAFAFA;
   --border: #401268;
   --input: #401268;
-  --ring: #FF6600;
-  --chart-1: #FF6600;
-  --chart-2: #FFA51F;
+  --ring: #FFA51F;
+  --chart-1: #FFA51F;
+  --chart-2: #CC0000;
   --chart-3: #051B7F;
   --chart-4: #401268;
   --chart-5: #FAFAFA;
   --sidebar: #080C08;
   --sidebar-foreground: #FAFAFA;
-  --sidebar-primary: #FF6600;
-  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar-primary: #FFA51F;
+  --sidebar-primary-foreground: #080C08;
   --sidebar-accent: #401268;
   --sidebar-accent-foreground: #FAFAFA;
   --sidebar-border: #401268;
-  --sidebar-ring: #FF6600;
+  --sidebar-ring: #FFA51F;
 }
 
 .dark {
@@ -88,31 +89,32 @@
   --card-foreground: #FAFAFA;
   --popover: #080C08;
   --popover-foreground: #FAFAFA;
-  --primary: #FF6600;
-  --primary-foreground: #FAFAFA;
-  --secondary: #FFA51F;
-  --secondary-foreground: #080C08;
+  --primary: #FFA51F;
+  --primary-foreground: #080C08;
+  --secondary: #CC0000;
+  --secondary-foreground: #FAFAFA;
   --muted: #401268;
   --muted-foreground: #FAFAFA;
   --accent: #051B7F;
   --accent-foreground: #FAFAFA;
-  --destructive: #FF6600;
+  --destructive: #CC0000;
+  --destructive-foreground: #FAFAFA;
   --border: #401268;
   --input: #401268;
-  --ring: #FF6600;
-  --chart-1: #FF6600;
-  --chart-2: #FFA51F;
+  --ring: #FFA51F;
+  --chart-1: #FFA51F;
+  --chart-2: #CC0000;
   --chart-3: #051B7F;
   --chart-4: #401268;
   --chart-5: #FAFAFA;
   --sidebar: #080C08;
   --sidebar-foreground: #FAFAFA;
-  --sidebar-primary: #FF6600;
-  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar-primary: #FFA51F;
+  --sidebar-primary-foreground: #080C08;
   --sidebar-accent: #401268;
   --sidebar-accent-foreground: #FAFAFA;
   --sidebar-border: #401268;
-  --sidebar-ring: #FF6600;
+  --sidebar-ring: #FFA51F;
 }
 
 @layer base {
