@@ -9,6 +9,7 @@ import SplashScreen from "@/components/SplashScreen";
 import { useState } from "react";
 
 export default function Landing() {
+  // State for splash screen
   const [showSplash, setShowSplash] = useState(true);
 
   return (
