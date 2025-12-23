@@ -23,7 +23,6 @@ const domainTeams = [
   {
     name: "Media",
     roles: [
-      { title: "Head", members: [] },
       { title: "Lead", members: [{ name: "G. Sai Krishna" }] },
       { title: "Co-Lead", members: [{ name: "Shaik Mohammed Aasim" }] },
     ]
