@@ -1,10 +1,108 @@
 import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
 
 // Data Definitions
 const leadership = [
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-4">
+              {leadership.map((member, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="h-full"
+                >
+                  <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col justify-center items-center py-12 px-4 w-full">
+                    <CardHeader className="text-center p-0 space-y-3 w-full">
+                      <CardTitle className="text-2xl md:text-3xl font-bold tracking-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
+                        {member.name}
+                      </CardTitle>
+                      <p className="text-lg md:text-xl text-primary font-medium tracking-wide uppercase">
+                        {member.role}
+                      </p>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+=======
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-4">
+              {leadership.map((member, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="h-full"
+                >
+                  <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col justify-center items-center py-12 px-4 w-full">
+                    <CardHeader className="text-center p-0 space-y-4 w-full flex flex-col items-center">
+                      <Avatar className="w-32 h-32 border-4 border-primary/10 shadow-xl shadow-primary/5">
+                        <AvatarImage src={(member as any).image} alt={member.name} className="object-cover" />
+                        <AvatarFallback className="bg-primary/5 text-primary text-3xl font-bold">
+                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div className="space-y-2">
+                        <CardTitle className="text-2xl md:text-3xl font-bold tracking-tight whitespace-nowrap overflow-hidden text-ellipsis px-2">
+                          {member.name}
+                        </CardTitle>
+                        <p className="text-lg md:text-xl text-primary font-medium tracking-wide uppercase">
+                          {member.role}
+                        </p>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+>>>>>>> REPLACE
+<<<<<<< SEARCH
+                              <div className="flex flex-col gap-2 items-center">
+                                {role.members.length > 0 ? (
+                                  role.members.map((member, mIndex) => (
+                                    <div key={mIndex} className="w-full max-w-[200px] px-4 py-2 bg-background/50 rounded-lg border border-primary/10 hover:border-primary/30 transition-colors shadow-sm">
+                                      <span className="text-base font-medium text-foreground/90 block truncate">{member.name}</span>
+                                    </div>
+                                  ))
+                                ) : (
+                                  <div className="w-full max-w-[200px] px-4 py-2 bg-muted/10 rounded-lg border border-dashed border-muted-foreground/20">
+                                    <span className="text-sm text-muted-foreground/50 italic">TBA</span>
+                                  </div>
+                                )}
+                              </div>
+=======
+                              <div className="flex flex-col gap-4 items-center">
+                                {role.members.length > 0 ? (
+                                  role.members.map((member, mIndex) => (
+                                    <div key={mIndex} className="flex flex-col items-center gap-3 w-full max-w-[200px] group">
+                                      <Avatar className="w-20 h-20 border-2 border-primary/10 group-hover:border-primary/30 transition-colors shadow-md">
+                                        <AvatarImage src={(member as any).image} alt={member.name} className="object-cover" />
+                                        <AvatarFallback className="bg-primary/5 text-primary text-lg font-semibold">
+                                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                                        </AvatarFallback>
+                                      </Avatar>
+                                      <div className="w-full px-3 py-2 bg-background/50 rounded-lg border border-primary/10 group-hover:border-primary/30 transition-colors shadow-sm text-center">
+                                        <span className="text-sm font-medium text-foreground/90 block truncate">{member.name}</span>
+                                      </div>
+                                    </div>
+                                  ))
+                                ) : (
+                                  <div className="flex flex-col items-center gap-3 w-full max-w-[200px] opacity-50">
+                                    <div className="w-20 h-20 rounded-full bg-muted/10 border-2 border-dashed border-muted-foreground/20 flex items-center justify-center">
+                                      <span className="text-xs text-muted-foreground/50">Photo</span>
+                                    </div>
+                                    <div className="w-full px-3 py-2 bg-muted/10 rounded-lg border border-dashed border-muted-foreground/20 text-center">
+                                      <span className="text-sm text-muted-foreground/50 italic">TBA</span>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
   { name: "M. Thousheer", role: "President" },
   { name: "Honalu K.G", role: "Vice President" },
   { name: "L. Mokshagna Reddy", role: "Vice President" },
