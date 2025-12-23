@@ -153,7 +153,7 @@ export default function Team() {
                   <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col justify-center items-center py-12 px-4 w-full">
                     <CardHeader className="text-center p-0 space-y-4 w-full flex flex-col items-center">
                       <Avatar className="w-32 h-32 border-4 border-primary/10 shadow-xl shadow-primary/5">
-                        <AvatarImage src={member.image} alt={member.name} className="object-cover" />
+                        <AvatarImage src={member.image} alt={member.name} className="object-cover object-top" />
                         <AvatarFallback className="bg-primary/5 text-primary text-3xl font-bold">
                           {getInitials(member.name)}
                         </AvatarFallback>
