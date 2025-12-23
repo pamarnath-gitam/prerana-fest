@@ -32,7 +32,7 @@ const domainTeams = [
     roles: [
       { title: "Head", members: [{ name: "Venkata Vishnu Vardhan Raju", image: "https://harmless-tapir-303.convex.cloud/api/storage/b0b811e7-fc09-42c7-ad63-689fe542a0c8" }] },
       { title: "Lead", members: [{ name: "M. Dhanunjay Reddy", image: "https://harmless-tapir-303.convex.cloud/api/storage/c6d2c2ac-a887-4e9a-9b74-8bf3ea04815a" }] },
-      { title: "Co-Lead", members: [{ name: "Rishi Lakkoju" }, { name: "Sohitha", image: "https://harmless-tapir-303.convex.cloud/api/storage/abab97c5-fe9c-4ab6-89d6-62aec61afd47" }] },
+      { title: "Co-Lead", members: [{ name: "Sohitha", image: "https://harmless-tapir-303.convex.cloud/api/storage/abab97c5-fe9c-4ab6-89d6-62aec61afd47" }] },
     ]
   },
   {
