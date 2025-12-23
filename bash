@@ -1,1 +1,1 @@
-ls -F public/
+rm src/pages/Team.tsx
