@@ -163,10 +163,6 @@ export default function Team() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {domainTeams.map((team, index) => {
-                // Check if team has any members
-                const hasMembers = team.roles.some(role => role.members.length > 0);
-                if (!hasMembers) return null;
-
                 return (
                   <motion.div
                     key={index}
@@ -181,20 +177,23 @@ export default function Team() {
                       </CardHeader>
                       <CardContent className="pt-8 space-y-8 flex-1">
                         {team.roles.map((role, rIndex) => {
-                          // Filter out empty roles
-                          if (role.members.length === 0) return null;
-                          
                           return (
                             <div key={rIndex} className="space-y-3 text-center">
                               <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] border-b border-border/50 pb-1 inline-block px-4">
                                 {role.title}
                               </h4>
                               <div className="flex flex-col gap-2 items-center">
-                                {role.members.map((member, mIndex) => (
-                                  <div key={mIndex} className="w-full max-w-[200px] px-4 py-2 bg-background/50 rounded-lg border border-primary/10 hover:border-primary/30 transition-colors shadow-sm">
-                                    <span className="text-base font-medium text-foreground/90 block truncate">{member.name}</span>
+                                {role.members.length > 0 ? (
+                                  role.members.map((member, mIndex) => (
+                                    <div key={mIndex} className="w-full max-w-[200px] px-4 py-2 bg-background/50 rounded-lg border border-primary/10 hover:border-primary/30 transition-colors shadow-sm">
+                                      <span className="text-base font-medium text-foreground/90 block truncate">{member.name}</span>
+                                    </div>
+                                  ))
+                                ) : (
+                                  <div className="w-full max-w-[200px] px-4 py-2 bg-muted/10 rounded-lg border border-dashed border-muted-foreground/20">
+                                    <span className="text-sm text-muted-foreground/50 italic">TBA</span>
                                   </div>
-                                ))}
+                                )}
                               </div>
                             </div>
                           );
