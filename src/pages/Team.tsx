@@ -40,7 +40,7 @@ const domainTeams = [
     roles: [
       { title: "Head", members: [{ name: "D. Naga Chandra Teja", image: "https://harmless-tapir-303.convex.cloud/api/storage/5cb4b06e-79e3-4d71-91bc-74d3d813aba0" }] },
       { title: "Lead", members: [] },
-      { title: "Co-Lead", members: [{ name: "Shaik Mohammed Aasim" }, { name: "Kandala Pavan" }] },
+      { title: "Co-Lead", members: [{ name: "Shaik Mohammed Aasim", image: "https://harmless-tapir-303.convex.cloud/api/storage/f19f04f8-fb37-4e1e-832d-0dc71ee218ee" }, { name: "Kandala Pavan" }] },
     ]
   },
   {
