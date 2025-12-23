@@ -24,7 +24,7 @@ const domainTeams = [
     name: "Media",
     roles: [
       { title: "Lead", members: [{ name: "G. Sai Krishna", image: "https://harmless-tapir-303.convex.cloud/api/storage/7fe2b617-067e-45a7-87d7-ab252708e8e2" }] },
-      { title: "Co-Lead", members: [{ name: "Shaik Mohammed Aasim" }] },
+      { title: "Co-Lead", members: [{ name: "Shaik Mohammed Aasim", image: "https://harmless-tapir-303.convex.cloud/api/storage/857107d9-6045-43bc-ab47-e6b0033ae74b" }] },
     ]
   },
   {
