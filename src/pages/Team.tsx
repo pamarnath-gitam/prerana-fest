@@ -205,7 +205,7 @@ export default function Team() {
                                   role.members.map((member, mIndex) => (
                                     <div key={mIndex} className="flex flex-col items-center gap-3 w-full max-w-[200px] group">
                                       <Avatar className="w-20 h-20 border-2 border-primary/10 group-hover:border-primary/30 transition-colors shadow-md">
-                                        <AvatarImage src={(member as any).image} alt={member.name} className="object-cover" />
+                                        <AvatarImage src={(member as any).image} alt={member.name} className="object-cover object-top" />
                                         <AvatarFallback className="bg-primary/5 text-primary text-lg font-semibold">
                                           {getInitials(member.name)}
                                         </AvatarFallback>
