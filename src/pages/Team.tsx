@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const leadership = [
   { name: "M. Thousheer", role: "President", image: "https://harmless-tapir-303.convex.cloud/api/storage/0a07c8e9-add2-4ef8-86d1-ae17ac4d6b98" },
   { name: "Honalu K.G", role: "Vice President", image: "https://harmless-tapir-303.convex.cloud/api/storage/c21b0000-05c7-435d-9811-368948d34a30" },
-  { name: "L. Mokshagna Reddy", role: "Vice President", image: undefined },
+  { name: "L. Mokshagna Reddy", role: "Vice President", image: "https://harmless-tapir-303.convex.cloud/api/storage/74a3cfdc-1326-4617-9650-f8275a255fb9" },
 ];
 
 const domainTeams = [
