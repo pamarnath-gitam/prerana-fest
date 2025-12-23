@@ -47,7 +47,7 @@ const domainTeams = [
     name: "Events",
     roles: [
       { title: "Head", members: [{ name: "B. Neha Reddy" }] },
-      { title: "Lead", members: [{ name: "Rachel Smita Massey" }] },
+      { title: "Lead", members: [{ name: "Rachel Smita Massey", image: "https://harmless-tapir-303.convex.cloud/api/storage/0f0b0031-49bc-4b23-b9e0-83e21b0554d0" }] },
       { title: "Co-Lead", members: [{ name: "Lanka Darshini Raj" }, { name: "P. Yathin Bharadwaj" }] },
     ]
   },
