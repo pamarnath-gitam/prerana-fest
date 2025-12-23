@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 // Data Definitions
 const leadership = [
-  { name: "M. Thousheer", role: "President", image: undefined },
-  { name: "Honalu K.G", role: "Vice President", image: undefined },
-  { name: "L. Mokshagna Reddy", role: "Vice President", image: undefined },
+  { name: "M. Thousheer", role: "President" },
+  { name: "Honalu K.G", role: "Vice President" },
+  { name: "L. Mokshagna Reddy", role: "Vice President" },
 ];
 
 const domainTeams = [
@@ -106,15 +106,6 @@ const advisoryCommittee = [
   "Rayanka",
 ];
 
-function getInitials(name: string) {
-  return name
-    .split(' ')
-    .map(n => n[0])
-    .join('')
-    .substring(0, 2)
-    .toUpperCase();
-}
-
 export default function Team() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 flex flex-col">
@@ -153,9 +144,9 @@ export default function Team() {
                   <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col justify-center items-center py-12 px-4 w-full">
                     <CardHeader className="text-center p-0 space-y-4 w-full flex flex-col items-center">
                       <Avatar className="w-32 h-32 border-4 border-primary/10 shadow-xl shadow-primary/5">
-                        <AvatarImage src={member.image} alt={member.name} className="object-cover" />
+                        <AvatarImage src={(member as any).image} alt={member.name} className="object-cover" />
                         <AvatarFallback className="bg-primary/5 text-primary text-3xl font-bold">
-                          {getInitials(member.name)}
+                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                         </AvatarFallback>
                       </Avatar>
                       <div className="space-y-2">
@@ -177,7 +168,7 @@ export default function Team() {
           <section className="space-y-16">
             <div className="text-center space-y-4">
                <h2 className="text-3xl font-bold text-secondary">Domain Teams</h2>
-               <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
+               <div className=\"w-24 h-1 bg-secondary/50 mx-auto rounded-full\" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {domainTeams.map((team, index) => {
@@ -207,7 +198,7 @@ export default function Team() {
                                       <Avatar className="w-20 h-20 border-2 border-primary/10 group-hover:border-primary/30 transition-colors shadow-md">
                                         <AvatarImage src={(member as any).image} alt={member.name} className="object-cover" />
                                         <AvatarFallback className="bg-primary/5 text-primary text-lg font-semibold">
-                                          {getInitials(member.name)}
+                                          {member.name.split(' ').map(n => n[0]).join('').substring(0, 2)}
                                         </AvatarFallback>
                                       </Avatar>
                                       <div className="w-full px-3 py-2 bg-background/50 rounded-lg border border-primary/10 group-hover:border-primary/30 transition-colors shadow-sm text-center">
