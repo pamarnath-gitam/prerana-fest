@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 // Data Definitions
 const leadership = [
-  { name: "M. Thousheer", role: "President", image: undefined },
+  { name: "M. Thousheer", role: "President", image: "https://harmless-tapir-303.convex.cloud/api/storage/0a07c8e9-add2-4ef8-86d1-ae17ac4d6b98" },
   { name: "Honalu K.G", role: "Vice President", image: undefined },
   { name: "L. Mokshagna Reddy", role: "Vice President", image: undefined },
 ];
