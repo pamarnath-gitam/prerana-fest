@@ -15,7 +15,7 @@ const domainTeams = [
   {
     name: "Security",
     roles: [
-      { title: "Head", members: [{ name: "M. Venkata Sai Teja" }] },
+      { title: "Head", members: [{ name: "M. Venkata Sai Teja", image: "https://harmless-tapir-303.convex.cloud/api/storage/39123ec4-fe28-4c5c-bad0-ab2eb221bae2" }] },
       { title: "Lead", members: [{ name: "Jaswanth Koduri" }, { name: "Spoorthi S" }] },
       { title: "Co-Lead", members: [{ name: "K.B. Dhanush Tej" }] },
     ]
