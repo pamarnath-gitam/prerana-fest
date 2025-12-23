@@ -16,7 +16,7 @@ const domainTeams = [
     name: "Security",
     roles: [
       { title: "Head", members: [{ name: "M. Venkata Sai Teja", image: "https://harmless-tapir-303.convex.cloud/api/storage/39123ec4-fe28-4c5c-bad0-ab2eb221bae2" }] },
-      { title: "Lead", members: [{ name: "Jaswanth Koduri", image: "https://harmless-tapir-303.convex.cloud/api/storage/e1b8d76d-0b0a-418d-a90d-fb58d4576b76" }, { name: "Spoorthi S" }] },
+      { title: "Lead", members: [{ name: "Jaswanth Koduri", image: "https://harmless-tapir-303.convex.cloud/api/storage/e1b8d76d-0b0a-418d-a90d-fb58d4576b76" }, { name: "Spoorthi S", image: "https://harmless-tapir-303.convex.cloud/api/storage/fd14b4dc-b8fe-4185-b40f-3e72528d8d29" }] },
       { title: "Co-Lead", members: [{ name: "K.B. Dhanush Tej" }] },
     ]
   },
