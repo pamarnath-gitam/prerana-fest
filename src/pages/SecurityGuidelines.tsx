@@ -1,7 +1,6 @@
 import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Shield, AlertTriangle, CheckCircle, Ban, IdCard, Backpack, Users, Megaphone } from "lucide-react";
 import { motion } from "framer-motion";
 

@@ -1,1 +1,1 @@
-rm src/pages/Team.tsx
+npx convex dev --once && npx tsc -b --noEmit
