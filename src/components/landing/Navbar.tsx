@@ -58,7 +58,7 @@ export default function Navbar() {
             </a>
           ))}
           <Button onClick={() => navigate("/register")}>
-            Register Now
+            GET YOUR PASSES
           </Button>
         </div>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
               setIsMenuOpen(false);
               navigate("/register");
             }}>
-              Register Now
+              GET YOUR PASSES
             </Button>
           </div>
         </motion.div>
