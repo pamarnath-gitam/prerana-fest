@@ -26,6 +26,9 @@ const Contact = lazy(() => import("./pages/Contact.tsx"));
 const AdminBrochure = lazy(() => import("./pages/AdminBrochure.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Mascot = lazy(() => import("./pages/Mascot.tsx"));
+const TechnicalRegistration = lazy(() => import("./pages/register/Technical.tsx"));
+const CulturalRegistration = lazy(() => import("./pages/register/Cultural.tsx"));
+const WellnessRegistration = lazy(() => import("./pages/register/Wellness.tsx"));
 
 // Simple loading fallback for route transitions
 function RouteLoading() {
@@ -73,6 +76,9 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/" element={<Landing />} />
               <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/register/technical" element={<TechnicalRegistration />} />
+              <Route path="/register/cultural" element={<CulturalRegistration />} />
+              <Route path="/register/wellness" element={<WellnessRegistration />} />
               <Route path="/about" element={<About />} />
               <Route path="/mascot" element={<Mascot />} />
               <Route path="/events" element={<Events />} />
