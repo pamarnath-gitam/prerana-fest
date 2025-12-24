@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
-import { Menu } from "lucide-react";
+import { ChevronDown, Menu } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -9,16 +15,37 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "About Us", href: "/about" },
-    { name: "Mascot", href: "/mascot" },
+    {
+      name: "About",
+      href: "/about",
+      dropdown: [
+        { name: "About Us", href: "/about" },
+        { name: "Mascot", href: "/mascot" },
+        { name: "Team", href: "/team" },
+      ],
+    },
     { name: "Events", href: "/events" },
     { name: "Schedule", href: "/#schedule" },
     { name: "Sponsors", href: "/sponsors" },
-    { name: "Team", href: "/team" },
     { name: "Contact", href: "/contact" },
     { name: "FAQ", href: "/faq" },
     { name: "Security", href: "/security-guidelines" },
   ];
+
+  const handleNavigation = (href: string) => {
+    if (href.startsWith("/")) {
+      if (href.includes("#")) {
+        const [path, hash] = href.split("#");
+        if (window.location.pathname === path) {
+          document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
+        } else {
+          navigate(href);
+        }
+      } else {
+        navigate(href);
+      }
+    }
+  };
 
   return (
     <motion.nav
@@ -34,31 +61,38 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-sm font-medium hover:text-primary transition-colors"
-              onClick={(e) => {
-                if (link.href.startsWith("/")) {
+          {navLinks.map((link) =>
+            link.dropdown ? (
+              <DropdownMenu key={link.name}>
+                <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium hover:text-primary transition-colors outline-none">
+                  {link.name} <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end" className="bg-background/95 backdrop-blur-md border-border/50">
+                  {link.dropdown.map((item) => (
+                    <DropdownMenuItem
+                      key={item.name}
+                      onClick={() => handleNavigation(item.href)}
+                      className="cursor-pointer hover:text-primary focus:text-primary focus:bg-primary/10"
+                    >
+                      {item.name}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-medium hover:text-primary transition-colors"
+                onClick={(e) => {
                   e.preventDefault();
-                  if (link.href.includes("#")) {
-                     // Handle hash navigation if needed, for now just navigate
-                     const [path, hash] = link.href.split("#");
-                     if (window.location.pathname === path) {
-                        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
-                     } else {
-                        navigate(link.href);
-                     }
-                  } else {
-                    navigate(link.href);
-                  }
-                }
-              }}
-            >
-              {link.name}
-            </a>
-          ))}
+                  handleNavigation(link.href);
+                }}
+              >
+                {link.name}
+              </a>
+            )
+          )}
           <Button onClick={() => navigate("/register")}>
             GET YOUR PASSES
           </Button>
@@ -81,21 +115,41 @@ export default function Navbar() {
           className="md:hidden bg-background border-b border-border/50"
         >
           <div className="flex flex-col p-4 gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setIsMenuOpen(false);
-                  navigate(link.href);
-                }}
-              >
-                {link.name}
-              </a>
-            ))}
-            <Button className="w-full" onClick={() => {
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <div key={link.name} className="flex flex-col gap-2">
+                  <span className="text-sm font-bold text-primary/80 px-2">{link.name}</span>
+                  {link.dropdown.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="text-sm font-medium hover:text-primary transition-colors pl-6"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setIsMenuOpen(false);
+                        handleNavigation(item.href);
+                      }}
+                    >
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-sm font-medium hover:text-primary transition-colors px-2"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMenuOpen(false);
+                    handleNavigation(link.href);
+                  }}
+                >
+                  {link.name}
+                </a>
+              )
+            )}
+            <Button className="w-full mt-2" onClick={() => {
               setIsMenuOpen(false);
               navigate("/register");
             }}>
