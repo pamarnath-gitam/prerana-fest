@@ -97,9 +97,9 @@ export default function SecurityGuidelines() {
                     <span className="font-semibold text-primary block mb-1">Girls</span>
                     <p className="text-sm text-muted-foreground">Bags allowed with mandatory full bag inspection. Only ID card allowed inside.</p>
                     </div>
-                  <span className="font-semibold text-primary block mb-1">Bag Dimension</span>
+                    <span className="font-semibold text-primary block mb-1">Bag Dimension</span>
                   <div className="bg-muted/30 p-3 rounded-lg">
-                    <p className="text-sm text-muted-foreground">Only small bags/pouches upto 6 to 8 inches.</p>
+                    <p className="text-sm text-muted-foreground">Only small bags/pouches upto 6-8 inches.</p>
                     <p className="text-sm text-muted-foreground">No large bag packs/hand bags are allowed.</p>
                   </div>
                   <div className="bg-destructive/10 p-3 rounded-lg border border-destructive/20">
