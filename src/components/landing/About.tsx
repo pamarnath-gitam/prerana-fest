@@ -19,7 +19,7 @@ export default function About() {
           <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
             WHAT IS PRERANA?
           </h2>
-          <p className="text-xl md:text-2xl font-medium italic text-foreground mb-8">
+          <p className="text-xl md:text-2xl font-medium italic text-primary mb-8">
             "A festival that doesn't just happen—it evolves, inspires, and sets the stage for tomorrow"
           </p>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
