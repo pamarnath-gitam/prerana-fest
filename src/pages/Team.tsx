@@ -199,7 +199,7 @@ export default function Team() {
                               <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] border-b border-border/50 pb-1 inline-block px-4">
                                 {role.title}
                               </h4>
-                              <div className="flex flex-col gap-4 items-center">
+                              <div className="flex flex-wrap justify-center gap-4">
                                 {role.members.length > 0 ? (
                                   role.members.map((member, mIndex) => (
                                     <div key={mIndex} className="flex flex-col items-center gap-3 w-full max-w-[200px] group">
