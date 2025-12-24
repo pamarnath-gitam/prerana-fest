@@ -15,6 +15,11 @@ export default function Footer() {
             <p className="text-muted-foreground text-sm">
               The annual Techno-Cultural and Wellness fest of GITAM University, Bengaluru.
             </p>
+            <img 
+              src="https://harmless-tapir-303.convex.cloud/api/storage/920deb77-5b83-473c-846b-cfaa277979fe" 
+              alt="Prerana Mascot" 
+              className="h-32 w-auto object-contain mt-4" 
+            />
           </div>
 
           <div>
