@@ -22,7 +22,7 @@ const categories = [
   },
   {
     title: "Cultural",
-    description: "Dance battles, music concerts, fashion shows, and art exhibitions.",
+    description: "Dance face-offs, music battles, fashion shows, and drama contests.",
     icon: Music,
     color: "text-purple-400",
     bg: "bg-purple-400/10",
