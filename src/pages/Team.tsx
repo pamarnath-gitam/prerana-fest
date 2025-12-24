@@ -203,9 +203,9 @@ export default function Team() {
                                 {role.members.length > 0 ? (
                                   role.members.map((member, mIndex) => (
                                     <div key={mIndex} className="flex flex-col items-center gap-3 w-full max-w-[200px] group">
-                                      <Avatar className="w-20 h-20 border-2 border-primary/10 group-hover:border-primary/30 transition-colors shadow-md">
+                                      <Avatar className="w-32 h-32 border-4 border-primary/10 group-hover:border-primary/30 transition-colors shadow-md">
                                         <AvatarImage src={(member as any).image} alt={member.name} className="object-cover object-top" />
-                                        <AvatarFallback className="bg-primary/5 text-primary text-lg font-semibold">
+                                        <AvatarFallback className="bg-primary/5 text-primary text-2xl font-semibold">
                                           {getInitials(member.name)}
                                         </AvatarFallback>
                                       </Avatar>
@@ -216,7 +216,7 @@ export default function Team() {
                                   ))
                                 ) : (
                                   <div className="flex flex-col items-center gap-3 w-full max-w-[200px] opacity-50">
-                                    <div className="w-20 h-20 rounded-full bg-muted/10 border-2 border-dashed border-muted-foreground/20 flex items-center justify-center">
+                                    <div className="w-32 h-32 rounded-full bg-muted/10 border-4 border-dashed border-muted-foreground/20 flex items-center justify-center">
                                       <span className="text-xs text-muted-foreground/50">Photo</span>
                                     </div>
                                     <div className="w-full px-3 py-2 bg-muted/10 rounded-lg border border-dashed border-muted-foreground/20 text-center">
