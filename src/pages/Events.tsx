@@ -58,11 +58,14 @@ export default function Events() {
     : null;
 
   const handleRegister = () => {
-    // Placeholder for actual registration logic
-    // Could redirect to a Google Form or open another modal
-    if (selectedEvent?.requiresPayment) {
+    // Redirect to specific Google Form for Technical events
+    if (selectedEvent?.category === "Technical") {
+      window.open("https://forms.gle/K32FR9MQ9K5mXRNw7", "_blank");
+    } else if (selectedEvent?.requiresPayment) {
+      // Placeholder for other paid events
       window.open("https://forms.google.com/placeholder-payment", "_blank");
     } else {
+      // Placeholder for other free events
       window.open("https://forms.google.com/placeholder-free", "_blank");
     }
     setIsDialogOpen(false);
