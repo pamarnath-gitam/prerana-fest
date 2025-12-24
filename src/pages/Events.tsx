@@ -61,6 +61,8 @@ export default function Events() {
     // Redirect to specific Google Form for Technical events
     if (selectedEvent?.category === "Technical") {
       window.open("https://forms.gle/K32FR9MQ9K5mXRNw7", "_blank");
+    } else if (selectedEvent?.category === "Cultural") {
+      window.open("https://forms.gle/eBEQH9Lvd6qVkEEF8", "_blank");
     } else if (selectedEvent?.requiresPayment) {
       // Placeholder for other paid events
       window.open("https://forms.google.com/placeholder-payment", "_blank");
@@ -272,6 +274,8 @@ export default function Events() {
                       onClick={() => {
                         if (selectedEvent?.category === "Technical") {
                           window.open("https://forms.gle/K32FR9MQ9K5mXRNw7", "_blank");
+                        } else if (selectedEvent?.category === "Cultural") {
+                          window.open("https://forms.gle/eBEQH9Lvd6qVkEEF8", "_blank");
                         } else {
                           setIsDialogOpen(true);
                         }
