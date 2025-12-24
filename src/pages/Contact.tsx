@@ -2,7 +2,7 @@ import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Mail, MapPin, ShieldAlert, User } from "lucide-react";
+import { Mail, MapPin, Phone, ShieldAlert, User } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -24,6 +24,60 @@ export default function Contact() {
             </p>
           </div>
 
+          <div className="max-w-3xl mx-auto">
+            {/* Contact Info Column */}
+            <div className="bg-card border border-border rounded-lg p-8">
+              <h2 className="text-2xl font-bold mb-6 text-primary">Get in Touch</h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <Mail className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Email Us</h3>
+                    <p className="text-muted-foreground">preranablr@gitam.in</p>
+                    <p className="text-muted-foreground text-sm mt-1">For general inquiries and sponsorship</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Call Us</h3>
+                    <p className="text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-muted-foreground text-sm mt-1">Mon-Fri, 9:00 AM - 5:00 PM</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Visit Us</h3>
+                    <p className="text-muted-foreground">
+                      GITAM Deemed to be University, Bengaluru Campus<br />
+                      NH 207, Nagadenehalli, Doddaballapur Taluk<br />
+                      Bengaluru Rural District, Karnataka - 561203
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-border">
+                 <img 
+                   src="https://harmless-tapir-303.convex.cloud/api/storage/492704e6-6a67-40db-b208-fb95bae91c34" 
+                   alt="Contact Support" 
+                   className="w-full max-w-[200px] mx-auto object-contain"
+                 />
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Form */}
           <div className="max-w-3xl mx-auto">
             {/* Contact Info Column */}
             <div className="space-y-6">

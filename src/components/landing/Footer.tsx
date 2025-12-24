@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="https://harmless-tapir-303.convex.cloud/api/storage/0140f3b6-dd3b-4c26-8a7a-5c96fa8e1fcf" alt="PRERANA 2026" className="h-12 w-auto" />
+              <img src="https://harmless-tapir-303.convex.cloud/api/storage/4a061a6e-11ab-491e-b5a2-78a2aa928f5d" alt="PRERANA 2026" className="h-12 w-auto" />
             </div>
             <p className="text-muted-foreground text-sm">
               The annual Techno-Cultural and Wellness fest of GITAM University, Bengaluru.

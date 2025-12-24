@@ -38,7 +38,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         </p>
 
         <img
-          src="https://harmless-tapir-303.convex.cloud/api/storage/0140f3b6-dd3b-4c26-8a7a-5c96fa8e1fcf"
+          src="https://harmless-tapir-303.convex.cloud/api/storage/4a061a6e-11ab-491e-b5a2-78a2aa928f5d"
           alt="Prerana 2026"
           className="w-64 md:w-96 object-contain relative z-10 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
         />
