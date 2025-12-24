@@ -19,6 +19,9 @@ export default function About() {
           <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
             WHAT IS PRERANA?
           </h2>
+          <p className="text-xl md:text-2xl font-medium italic text-foreground mb-8">
+            "A festival that doesn't just happen—it evolves, inspires, and sets the stage for tomorrow"
+          </p>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
             PRERANA isn't just a fest, it's the heartbeat of GITAM University, Bengaluru. A dazzling fusion of culture, tech, and raw student energy, it has grown into a powerhouse of inspiration. Since day one, PRERANA has been the launchpad where ideas take flight, talents rise, and collaboration transforms into unforgettable experiences.
           </p>
