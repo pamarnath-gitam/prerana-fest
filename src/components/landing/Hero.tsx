@@ -118,7 +118,7 @@ export default function Hero() {
                 className="text-lg px-8 py-6 rounded-xl shadow-[0_0_20px_-5px_var(--primary)] hover:shadow-[0_0_30px_-5px_var(--primary)] transition-shadow w-full sm:w-auto"
                 onClick={() => navigate("/register")}
               >
-                REGISTER NOW
+                GET YOUR PASSES
               </Button>
               <Button 
                 size="lg" 
