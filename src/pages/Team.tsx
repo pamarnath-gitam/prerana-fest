@@ -48,7 +48,7 @@ const domainTeams = [
     roles: [
       { title: "Head", members: [{ name: "B. Neha Reddy" }] },
       { title: "Lead", members: [{ name: "Rachel Smita Massey", image: "https://harmless-tapir-303.convex.cloud/api/storage/0f0b0031-49bc-4b23-b9e0-83e21b0554d0" }] },
-      { title: "Co-Lead", members: [{ name: "Lanka Darshini Raj", image: "https://harmless-tapir-303.convex.cloud/api/storage/851a576e-08b8-4bd2-b360-793a2dab85c9" }, { name: "P. Yathin Bharadwaj" }] },
+      { title: "Co-Lead", members: [{ name: "Lanka Darshini Raj", image: "https://harmless-tapir-303.convex.cloud/api/storage/851a576e-08b8-4bd2-b360-793a2dab85c9" }, { name: "P. Yathin Bharadwaj", image: "https://harmless-tapir-303.convex.cloud/api/storage/1a77c08c-0a3c-4039-96a6-1fc5cd25f1fd" }] },
     ]
   },
   {
