@@ -178,7 +178,7 @@ export default function Team() {
                <h2 className="text-3xl font-bold text-secondary">Domain Teams</h2>
                <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-4">
               {domainTeams.map((team, index) => {
                 return (
                   <motion.div
@@ -188,7 +188,7 @@ export default function Team() {
                     transition={{ delay: 0.2 + index * 0.05 }}
                     className="h-full"
                   >
-                    <Card className="bg-card/30 backdrop-blur-sm border-primary/10 hover:border-primary/40 transition-all duration-300 hover:shadow-md h-full flex flex-col">
+                    <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col">
                       <CardHeader className="pb-6 border-b border-primary/10 bg-primary/5">
                         <CardTitle className="text-2xl text-primary text-center font-bold tracking-tight">{team.name}</CardTitle>
                       </CardHeader>
