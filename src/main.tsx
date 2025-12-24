@@ -24,6 +24,8 @@ const FAQ = lazy(() => import("./pages/FAQ.tsx"));
 const Team = lazy(() => import("./pages/Team.tsx"));
 const Contact = lazy(() => import("./pages/Contact.tsx"));
 const AdminBrochure = lazy(() => import("./pages/AdminBrochure.tsx"));
+const About = lazy(() => import("./pages/About.tsx"));
+const Mascot = lazy(() => import("./pages/Mascot.tsx"));
 
 // Simple loading fallback for route transitions
 function RouteLoading() {
@@ -71,6 +73,8 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/" element={<Landing />} />
               <Route path="/auth" element={<AuthPage redirectAfterAuth="/" />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/mascot" element={<Mascot />} />
               <Route path="/events" element={<Events />} />
               <Route path="/events/:category" element={<Events />} />
               <Route path="/events/:category/:slug" element={<Events />} />
