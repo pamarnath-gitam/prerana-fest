@@ -154,7 +154,7 @@ export default function SecurityGuidelines() {
                     <li>Water bottles (plastic, metal, thermos)</li>
                     <li>Metal or steel containers</li>
                     <li>Large food boxes or group items</li>
-                    <li>Any kind of makeup product is not allowed </li>
+                    <li>Any kind of cosmetics product is not allowed </li>
                   </ul>
                 </div>
                 <div>
