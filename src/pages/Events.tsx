@@ -57,14 +57,17 @@ export default function Events() {
     ? events.find(e => e.slug === slug)
     : null;
 
+  const getRegistrationLink = (category?: string) => {
+    if (category === "Technical") return "https://forms.gle/K32FR9MQ9K5mXRNw7";
+    if (category === "Cultural") return "https://forms.gle/eBEQH9Lvd6qVkEEF8";
+    if (category === "Wellness") return "https://forms.gle/29dSKqYCjRNFHHQQ6";
+    return null;
+  };
+
   const handleRegister = () => {
-    // Redirect to specific Google Form for Technical events
-    if (selectedEvent?.category === "Technical") {
-      window.open("https://forms.gle/K32FR9MQ9K5mXRNw7", "_blank");
-    } else if (selectedEvent?.category === "Cultural") {
-      window.open("https://forms.gle/eBEQH9Lvd6qVkEEF8", "_blank");
-    } else if (selectedEvent?.category === "Wellness") {
-      window.open("https://forms.gle/29dSKqYCjRNFHHQQ6", "_blank");
+    const link = getRegistrationLink(selectedEvent?.category);
+    if (link) {
+      window.open(link, "_blank");
     } else if (selectedEvent?.requiresPayment) {
       // Placeholder for other paid events
       window.open("https://forms.google.com/placeholder-payment", "_blank");
@@ -274,12 +277,9 @@ export default function Events() {
                       size="lg" 
                       className="text-lg px-8 shadow-lg shadow-primary/20"
                       onClick={() => {
-                        if (selectedEvent?.category === "Technical") {
-                          window.open("https://forms.gle/K32FR9MQ9K5mXRNw7", "_blank");
-                        } else if (selectedEvent?.category === "Cultural") {
-                          window.open("https://forms.gle/eBEQH9Lvd6qVkEEF8", "_blank");
-                        } else if (selectedEvent?.category === "Wellness") {
-                          window.open("https://forms.gle/29dSKqYCjRNFHHQQ6", "_blank");
+                        const link = getRegistrationLink(selectedEvent?.category);
+                        if (link) {
+                          window.open(link, "_blank");
                         } else {
                           setIsDialogOpen(true);
                         }
