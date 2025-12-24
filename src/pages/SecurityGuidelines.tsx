@@ -106,6 +106,7 @@ export default function SecurityGuidelines() {
                   <div className="bg-destructive/10 p-3 rounded-lg border border-destructive/20">
                     <span className="font-semibold text-destructive block mb-1">Boys</span>
                     <p className="text-sm text-destructive">No bags allowed during night events.</p>
+                    <p className="text-sm text-destructive">Bag Dimensions - only small bags and pouches upto 6-8 inches are allowed </p>
                   </div>
                 </div>
               </div>
@@ -154,6 +155,7 @@ export default function SecurityGuidelines() {
                     <li>Water bottles (plastic, metal, thermos)</li>
                     <li>Metal or steel containers</li>
                     <li>Large food boxes or group items</li>
+                    <li>Any kind of makeup product is not allowed </li>
                   </ul>
                 </div>
                 <div>
