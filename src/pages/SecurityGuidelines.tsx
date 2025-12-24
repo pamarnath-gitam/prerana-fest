@@ -53,7 +53,7 @@ export default function SecurityGuidelines() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground">
-                <p className="font-medium text-foreground">A valid College ID is mandatory for:</p>
+                <p className="font-medium text-foreground">A valid University ID is mandatory for:</p>
                 <ul className="list-disc list-inside space-y-1 ml-2">
                   <li>GITAM students</li>
                   <li>External participants</li>
@@ -62,10 +62,6 @@ export default function SecurityGuidelines() {
                   <p className="text-destructive flex items-start gap-2">
                     <Ban className="h-4 w-4 mt-1 shrink-0" />
                     No alternative IDs (photocopies, screenshots, temporary slips) will be accepted.
-                  </p>
-                  <p className="text-destructive flex items-start gap-2">
-                    <Ban className="h-4 w-4 mt-1 shrink-0" />
-                    Entry without a valid College ID is <strong>NOT allowed</strong>. Attendees must report to the Helpdesk for verification.
                   </p>
                 </div>
               </CardContent>
@@ -148,6 +144,7 @@ export default function SecurityGuidelines() {
                   <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
                     <li>Political party flags, banners</li>
                     <li>Scarves, badges, or promotional materials</li>
+                    <li>Any celebrity influence is not allowed </li>
                   </ul>
                 </div>
                 <div>
@@ -183,7 +180,7 @@ export default function SecurityGuidelines() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-muted-foreground">
-                <p>• All participants (internal and external) must present a valid College ID.</p>
+                <p>• All participants (internal and external) must present a valid University ID.</p>
                 <p>• Participants must report to competitions on time. Late reporting may result in disqualification.</p>
                 <p>• Only registered participants may enter competition zones.</p>
                 <p>• ID verification is required for collecting certificates, awards, and prizes.</p>
@@ -198,7 +195,7 @@ export default function SecurityGuidelines() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-muted-foreground">
-                <p>• Follow the campus ONE-WAY entry/exit system wherever implemented.</p>
+                <p>• Follow the ONE-WAY entry/exit system wherever implemented.</p>
                 <p>• Do not crowd near narrow walkways, backstage areas, or technical zones.</p>
                 <p>• Barricades must not be crossed under any circumstance.</p>
                 <p>• Follow instructions of Security, QRT, Fire & Safety, and volunteers.</p>
