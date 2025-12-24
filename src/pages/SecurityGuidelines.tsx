@@ -37,9 +37,8 @@ export default function SecurityGuidelines() {
                 <ul className="list-disc list-inside space-y-2">
                   <li>Entry is permitted <strong>ONLY</strong> through the Main Gate.</li>
                   <li>Mandatory security screening, metal detection, and bag checks for all entrants.</li>
-                  <li>Re-entry allowed only with valid wristband or ID verification.</li>
+                  <li>Re-entry not allowed.</li>
                   <li>Security personnel reserve full authority to deny or restrict entry as required.</li>
-                  <li><strong>NO alumni</strong> are permitted inside the venue under any circumstances.</li>
                   <li>Attendees must obey all instructions issued by security staff and volunteers.</li>
                 </ul>
               </CardContent>
@@ -58,7 +57,6 @@ export default function SecurityGuidelines() {
                 <ul className="list-disc list-inside space-y-1 ml-2">
                   <li>GITAM students</li>
                   <li>External participants</li>
-                  <li>Any student entering the campus</li>
                 </ul>
                 <div className="mt-4 space-y-2">
                   <p className="text-destructive flex items-start gap-2">
@@ -102,11 +100,15 @@ export default function SecurityGuidelines() {
                   <div className="bg-muted/30 p-3 rounded-lg">
                     <span className="font-semibold text-primary block mb-1">Girls</span>
                     <p className="text-sm text-muted-foreground">Bags allowed with mandatory full bag inspection. Only ID card allowed inside.</p>
+                    </div>
+                  <div className="bg-muted/30 p-3 rounded-lg">
+                    <p className="text-sm text-muted-foreground">Bag Dimension Only small bags/pouches upto 6 to 8 inches.</p>
+                    <p className="text-sm text-muted-foreground">No large bag packs/hand bags are allowed.</p>
                   </div>
                   <div className="bg-destructive/10 p-3 rounded-lg border border-destructive/20">
                     <span className="font-semibold text-destructive block mb-1">Boys</span>
                     <p className="text-sm text-destructive">No bags allowed during night events.</p>
-                    <p className="text-sm text-destructive">Bag Dimensions - only small bags and pouches upto 6-8 inches are allowed </p>
+
                   </div>
                 </div>
               </div>
