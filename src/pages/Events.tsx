@@ -266,12 +266,20 @@ export default function Events() {
                     <div className="text-3xl font-bold text-primary">
                       {selectedEvent.registrationFee === "0" ? "Free" : selectedEvent.registrationFee}
                     </div>
+                    <Button 
+                      size="lg" 
+                      className="text-lg px-8 shadow-lg shadow-primary/20"
+                      onClick={() => {
+                        if (selectedEvent?.category === "Technical") {
+                          window.open("https://forms.gle/K32FR9MQ9K5mXRNw7", "_blank");
+                        } else {
+                          setIsDialogOpen(true);
+                        }
+                      }}
+                    >
+                      Register Now
+                    </Button>
                     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                      <DialogTrigger asChild>
-                        <Button size="lg" className="text-lg px-8 shadow-lg shadow-primary/20">
-                          Register Now
-                        </Button>
-                      </DialogTrigger>
                       <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col">
                         <DialogHeader>
                           <DialogTitle>Event Registration: {selectedEvent.title}</DialogTitle>
