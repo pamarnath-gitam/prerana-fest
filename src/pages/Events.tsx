@@ -57,23 +57,21 @@ export default function Events() {
     ? events.find(e => e.slug === slug)
     : null;
 
-  const getRegistrationLink = (category?: string) => {
-    if (category === "Technical") return "https://forms.gle/K32FR9MQ9K5mXRNw7";
-    if (category === "Cultural") return "https://forms.gle/eBEQH9Lvd6qVkEEF8";
-    if (category === "Wellness") return "https://forms.gle/29dSKqYCjRNFHHQQ6";
-    return null;
-  };
-
   const handleRegister = () => {
-    const link = getRegistrationLink(selectedEvent?.category);
-    if (link) {
-      window.open(link, "_blank");
-    } else if (selectedEvent?.requiresPayment) {
-      // Placeholder for other paid events
-      window.open("https://forms.google.com/placeholder-payment", "_blank");
-    } else {
-      // Placeholder for other free events
-      window.open("https://forms.google.com/placeholder-free", "_blank");
+    if (!selectedEvent) return;
+
+    switch (selectedEvent.category) {
+      case "Technical":
+        navigate("/register/technical");
+        break;
+      case "Cultural":
+        navigate("/register/cultural");
+        break;
+      case "Wellness":
+        navigate("/register/wellness");
+        break;
+      default:
+        navigate("/register");
     }
     setIsDialogOpen(false);
   };
@@ -276,14 +274,7 @@ export default function Events() {
                     <Button 
                       size="lg" 
                       className="text-lg px-8 shadow-lg shadow-primary/20"
-                      onClick={() => {
-                        const link = getRegistrationLink(selectedEvent?.category);
-                        if (link) {
-                          window.open(link, "_blank");
-                        } else {
-                          setIsDialogOpen(true);
-                        }
-                      }}
+                      onClick={handleRegister}
                     >
                       Register Now
                     </Button>
