@@ -6,36 +6,31 @@ import { useNavigate } from "react-router";
 
 export default function About() {
   const navigate = useNavigate();
-
   return (
-    <section id="about" className="py-20 relative overflow-hidden bg-background">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute top-1/2 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-pulse delay-700" />
-        <div className="absolute -bottom-24 left-1/3 w-80 h-80 bg-accent/10 rounded-full blur-3xl animate-pulse delay-1000" />
+    <section id="about" className="py-24 bg-background relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">WHAT IS PRERANA?</h2>
-          <blockquote className="text-xl md:text-2xl font-light italic text-primary mb-8 max-w-4xl mx-auto">
-            "A festival that doesn't just happen—it evolves, inspires, and sets the stage for tomorrow."
-          </blockquote>
-          <div className="max-w-3xl mx-auto space-y-6 text-lg text-muted-foreground leading-relaxed">
-            <p>
-              PRERANA isn't just a fest, it's the heartbeat of GITAM University, Bengaluru. A dazzling fusion of culture, tech, and raw student energy, it has grown into a powerhouse of inspiration. Since day one, PRERANA has been the launchpad where ideas take flight, talents rise, and collaboration transforms into unforgettable experiences.
-            </p>
-            <p>
-              Prerana 2025 continued this legacy with two action-packed days—February 1 & 2—filled with cultural showcases, technical competitions, wellness sessions, workshops, esports battles, and endless opportunities to learn, perform, compete, and connect.
-            </p>
-            <p>
-              This year's fest came alive through the theme: <span className="text-foreground font-semibold">Innovation, Collaboration, and Hope</span> — a creative compass that encouraged participants to think boldly, break patterns, and embrace new perspectives. From the main stage to the hackathons and from wellness zones to workshops, the theme echoed in every moment of the fest.
-            </p>
-          </div>
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent">
+            WHAT IS PRERANA?
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+            PRERANA isn't just a fest, it's the heartbeat of GITAM University, Bengaluru. A dazzling fusion of culture, tech, and raw student energy, it has grown into a powerhouse of inspiration. Since day one, PRERANA has been the launchpad where ideas take flight, talents rise, and collaboration transforms into unforgettable experiences.
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mt-4">
+            Prerana 2025 continued this legacy with two action packed days—February 1 & 2, filled with cultural showcases, technical competitions, wellness sessions, workshops, E-sports battles, and endless opportunities to learn, perform, compete, and connect.
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mt-4">
+            This year's fest came alive through the theme: <span className="text-primary font-semibold">Innovation, Collaboration, and Hope</span>, a creative compass that encouraged participants to think boldly, break patterns, and embrace new perspectives. From the main stage to the Hackathon and from wellness zones to workshops, the theme echoed in every moment of the fest.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-3 gap-8">
           {[
             { 
               icon: Zap, 
