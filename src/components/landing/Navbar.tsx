@@ -15,6 +15,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+    { name: "Home", href: "/" },
     {
       name: "About",
       href: "/about",
