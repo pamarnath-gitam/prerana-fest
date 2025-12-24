@@ -26,11 +26,17 @@ export default function Navbar() {
       ],
     },
     { name: "Events", href: "/events" },
-    { name: "Schedule", href: "/#schedule" },
+    {
+      name: "Insight",
+      href: "#",
+      dropdown: [
+        { name: "FAQ", href: "/faq" },
+        { name: "Schedule", href: "/#schedule" },
+        { name: "Security", href: "/security-guidelines" },
+      ],
+    },
     { name: "Sponsors", href: "/sponsors" },
     { name: "Contact", href: "/contact" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Security", href: "/security-guidelines" },
   ];
 
   const handleNavigation = (href: string) => {
