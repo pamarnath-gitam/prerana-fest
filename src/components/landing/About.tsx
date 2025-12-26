@@ -37,8 +37,8 @@ export default function About() {
           {[
             { 
               icon: Zap, 
-              title: "National Competitions", 
-              desc: "Compete with the best talent from across the country in coding, robotics, and more.",
+              title: "Wellness Competitions", 
+              desc: "Wellness Experiences you'll actually enjoy , thoughtfully  curated to support physical, mental and emotional well-being.",
               color: "text-secondary" 
             },
             { 
