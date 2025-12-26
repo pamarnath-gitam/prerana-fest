@@ -34,7 +34,6 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         
         <p className="text-xs md:text-sm text-muted-foreground mb-6 relative z-10 font-medium tracking-widest uppercase max-w-lg">
           The Directorate of Student Life,
-          <span className="block mt-1 text-[10px] md:text-xs opacity-80">Presents</span>
         </p>
 
         <p className="text-xs md:text-sm text-muted-foreground mb-6 relative z-10 font-medium tracking-widest uppercase max-w-lg">
