@@ -262,16 +262,7 @@ export default function EventDetails({ event: selectedEvent, category }: EventDe
                   <div className="text-sm text-muted-foreground mb-1 flex items-center gap-2">
                     <MapPin className="w-4 h-4" /> Location
                   </div>
-                  <div className="font-medium">
-                    <a 
-                      href="https://www.google.com/maps/place/Gitam+University+Parking/@13.2876854,77.5971134,132m/data=!3m1!1e3!4m6!3m5!1s0x3bb1e134094dd77f:0x6206764d41f07ca7!8m2!3d13.2875316!4d77.5973482!16s%2Fg%2F11l29myt7v?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="hover:text-primary hover:underline transition-colors"
-                    >
-                      {selectedEvent.location}
-                    </a>
-                  </div>
+                  <div className="font-medium">{selectedEvent.location}</div>
                 </div>
                 {selectedEvent.day && (
                   <div>

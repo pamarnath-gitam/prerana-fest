@@ -26,20 +26,16 @@ export default function Register() {
               </div>
               <div className="flex-1 flex flex-col">
                 <CardHeader>
-                  <div className="flex justify-between items-start gap-4">
-                    <div>
-                      <CardTitle className="text-3xl">General Fest Pass</CardTitle>
-                      <CardDescription className="text-lg mt-1">Access to main events, pro-shows, and common areas.</CardDescription>
-                    </div>
-                    <div className="text-3xl font-bold text-primary whitespace-nowrap">₹ 399</div>
-                  </div>
+                  <CardTitle className="text-3xl">General Fest Pass</CardTitle>
+                  <CardDescription className="text-lg">Access to main events, pro-shows, and common areas.</CardDescription>
                 </CardHeader>
-                <CardContent className="flex-1 flex flex-col gap-4">
+                <CardContent className="flex-1">
                   <p className="text-muted-foreground">
                     Get your official Prerana 2026 pass. This is required for entry into the campus during the fest days.
+                    Does not include individual competition registrations.
                   </p>
                 </CardContent>
-                <CardFooter className="flex flex-col gap-3">
+                <CardFooter>
                   <Button 
                     size="lg"
                     className="w-full gap-2 text-lg" 
@@ -47,9 +43,6 @@ export default function Register() {
                   >
                     Get Fest Pass <ArrowRight className="w-5 h-5" />
                   </Button>
-                  <p className="text-sm text-muted-foreground/60 italic text-center">
-                    * Does not include individual competition registrations.
-                  </p>
                 </CardFooter>
               </div>
             </Card>
