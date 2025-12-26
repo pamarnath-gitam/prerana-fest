@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Check, ExternalLink } from "lucide-react";
+import { ArrowRight, Check, ExternalLink } from "lucide-react";
+import { useNavigate } from "react-router";
 
 const plans = [
   {
@@ -25,6 +26,8 @@ const plans = [
 ];
 
 export default function Registration() {
+  const navigate = useNavigate();
+
   return (
     <section id="registration" className="py-20">
       <div className="container mx-auto px-4">
@@ -122,9 +125,9 @@ export default function Registration() {
                 <Button 
                   size="lg" 
                   className="w-full gap-2" 
-                  onClick={() => window.open("https://forms.google.com/placeholder", "_blank")}
+                  onClick={() => navigate("/register")}
                 >
-                  Register for Individual Events <ExternalLink className="w-4 h-4" />
+                  Register for Individual Events <ArrowRight className="w-4 h-4" />
                 </Button>
               </CardFooter>
             </Card>
