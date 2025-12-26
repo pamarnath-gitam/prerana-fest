@@ -240,7 +240,7 @@ export default function Team() {
           <section className="space-y-12">
              <div className="text-center space-y-4">
                <h2 className="text-3xl font-bold text-secondary">Advisory Committee</h2>
-               <p className="text-muted-foreground text-lg">Faculty Support</p>
+               <p className="text-muted-foreground text-lg">Student Life Team</p>
                <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
             </div>
             <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
