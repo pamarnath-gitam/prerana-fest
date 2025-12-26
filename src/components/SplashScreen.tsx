@@ -33,9 +33,9 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/20 to-accent/20 blur-3xl rounded-full animate-pulse" />
         
         <p className="text-xs md:text-sm text-muted-foreground mb-6 relative z-10 font-medium tracking-widest uppercase max-w-lg">
-          The Directorate of Student Life
-          <span className="mx-1">GITAM Deemed to be University</span>
-          <span className="block mt-1 text-[10px] md:text-xs opacity-80">Presents</span>
+        <span className="block">The Directorate of Student Life</span>
+        <span className="block">GITAM Deemed to be University</span>
+        <span className="block mt-1 text-[10px] md:text-xs opacity-80">Presents</span>
         </p>
 
         <img
