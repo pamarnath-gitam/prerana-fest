@@ -17,15 +17,14 @@ export default function TechnicalRegistration() {
             <CardHeader>
               <CardTitle className="text-center">Registration Form</CardTitle>
             </CardHeader>
-            <CardContent className="p-0 min-h-[1000px]">
+            <CardContent className="p-0">
               <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSeBmO1jFceWvOS7FyL5Lw8i6L6GUTY5MMWkU7tlZ6xtuN0dJg/viewform?embedded=true" 
                 width="100%" 
-                height="1000" 
                 frameBorder="0" 
                 marginHeight={0} 
                 marginWidth={0}
-                className="w-full h-full"
+                className="w-full min-h-[1500px]"
                 title="Technical Registration"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
               >

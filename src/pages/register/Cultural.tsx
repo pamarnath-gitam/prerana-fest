@@ -17,15 +17,14 @@ export default function CulturalRegistration() {
             <CardHeader>
               <CardTitle className="text-center">Registration Form</CardTitle>
             </CardHeader>
-            <CardContent className="p-0 min-h-[1000px]">
+            <CardContent className="p-0">
               <iframe 
                 src="https://docs.google.com/forms/d/e/1FAIpQLSfCxTEYf1kyf8swspi-7did05A_tf1z-NnbrAGFSv8NttL5lQ/viewform?embedded=true" 
                 width="100%" 
-                height="1000" 
                 frameBorder="0" 
                 marginHeight={0} 
                 marginWidth={0}
-                className="w-full h-full"
+                className="w-full min-h-[1500px]"
                 title="Cultural Registration"
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
               >
