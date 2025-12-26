@@ -27,7 +27,6 @@ export default function WellnessRegistration() {
                 marginWidth={0}
                 className="w-full h-full"
                 title="Wellness Registration"
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
               >
                 Loading…
               </iframe>

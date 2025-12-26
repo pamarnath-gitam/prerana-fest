@@ -85,7 +85,6 @@ export default function Registration() {
                 className="w-full h-full border-0"
                 title="Fest Registration"
                 allowFullScreen
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
               ></iframe>
             </CardContent>
           </Card>

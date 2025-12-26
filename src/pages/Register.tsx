@@ -2,7 +2,7 @@ import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Code, Music, Heart, Ticket } from "lucide-react";
+import { ArrowRight, Code, Music, Heart } from "lucide-react";
 import { useNavigate } from "react-router";
 
 export default function Register() {
@@ -16,36 +16,6 @@ export default function Register() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Registration</h1>
             <p className="text-xl text-muted-foreground">Choose your event category to register for Prerana 2026</p>
-          </div>
-
-          {/* General Fest Registration */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <Card className="flex flex-col md:flex-row border-primary/40 bg-primary/5 hover:bg-primary/10 transition-colors overflow-hidden">
-              <div className="md:w-1/3 bg-primary/10 flex items-center justify-center p-8">
-                <Ticket className="w-24 h-24 text-primary" />
-              </div>
-              <div className="flex-1 flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-3xl">General Fest Pass</CardTitle>
-                  <CardDescription className="text-lg">Access to main events, pro-shows, and common areas.</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-1">
-                  <p className="text-muted-foreground">
-                    Get your official Prerana 2026 pass. This is required for entry into the campus during the fest days.
-                    Does not include individual competition registrations.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Button 
-                    size="lg"
-                    className="w-full gap-2 text-lg" 
-                    onClick={() => navigate("/register/general")}
-                  >
-                    Get Fest Pass <ArrowRight className="w-5 h-5" />
-                  </Button>
-                </CardFooter>
-              </div>
-            </Card>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">

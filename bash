@@ -1,1 +1,1 @@
-npx vite build
+npx convex dev --once && npx tsc -b --noEmit
