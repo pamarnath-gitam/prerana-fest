@@ -94,15 +94,15 @@ const domainTeams = [
 ];
 
 const advisoryCommittee = [
-  "Dr. Reema Chaudhury",
-  "Dr. Asha Acharya",
-  "Ayush BM",
-  "Anitha D",
-  "Meghana Musku",
-  "Pranav Amarnath",
-  "Arjun Raghu",
-  "Srikanth",
-  "Rayanka",
+  { name: "Dr. Reema Chaudhury", role: "Director, Campus Life" },
+  { name: "Dr. Asha Acharya", role: "Manager, Student Life" },
+  { name: "Anitha D", role: "Senior Executive" },
+  { name: "Arjun Raghu", role: "Senior Executive" },
+  { name: "Pranav Amarnath", role: "Senior Executive (Wellness)" },
+  { name: "Meghana Musku", role: "Senior Executive (Wellness)" },
+  { name: "Srikanth Basavraj", role: "Senior Executive" },
+  { name: "Rayanka Debnath", role: "Senior Executive" },
+  { name: "Ayush BM", role: "Senior Executive" },
 ];
 
 function getInitials(name: string) {
@@ -250,9 +250,10 @@ export default function Team() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.4 + index * 0.05 }}
-                  className="bg-muted/10 border border-primary/10 rounded-xl px-8 py-4 text-center hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 cursor-default min-w-[200px]"
+                  className="bg-muted/10 border border-primary/10 rounded-xl px-8 py-6 text-center hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 cursor-default min-w-[240px] flex flex-col justify-center items-center gap-2"
                 >
-                  <span className="font-medium text-lg tracking-wide">{member}</span>
+                  <span className="font-bold text-lg tracking-wide text-foreground">{member.name}</span>
+                  <span className="text-sm text-muted-foreground font-medium uppercase tracking-wider">{member.role}</span>
                 </motion.div>
               ))}
             </div>
