@@ -24,7 +24,7 @@ export default function Mascot() {
 
           <div className="relative w-64 h-64 md:w-96 md:h-96 mx-auto bg-gradient-to-b from-primary/20 to-transparent rounded-full flex items-center justify-center border-4 border-primary/20 shadow-[0_0_50px_-12px_var(--color-primary)] overflow-hidden group">
              <img 
-               src="https://harmless-tapir-303.convex.cloud/api/storage/5b70aab6-3342-499b-94fb-6814e9e3e270" 
+               src="https://harmless-tapir-303.convex.cloud/api/storage/e8d66dab-3969-4d1e-91c2-ae1155c2041c" 
                alt="Prerana Mascot" 
                className="w-full h-full object-contain p-4 transition-transform duration-500 group-hover:scale-110"
              />
