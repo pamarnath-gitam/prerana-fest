@@ -38,11 +38,8 @@ export default function Register() {
                   <p className="text-muted-foreground">
                     Get your official Prerana 2026 pass. This is required for entry into the campus during the fest days.
                   </p>
-                  <p className="text-sm text-muted-foreground/60 italic">
-                    * Does not include individual competition registrations.
-                  </p>
                 </CardContent>
-                <CardFooter>
+                <CardFooter className="flex flex-col gap-3">
                   <Button 
                     size="lg"
                     className="w-full gap-2 text-lg" 
@@ -50,6 +47,9 @@ export default function Register() {
                   >
                     Get Fest Pass <ArrowRight className="w-5 h-5" />
                   </Button>
+                  <p className="text-sm text-muted-foreground/60 italic text-center">
+                    * Does not include individual competition registrations.
+                  </p>
                 </CardFooter>
               </div>
             </Card>
