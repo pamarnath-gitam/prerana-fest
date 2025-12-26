@@ -22,7 +22,7 @@ export const categories = [
   },
   {
     title: "Wellness",
-    description: "Yoga sessions, meditation, mental health workshops, and fitness challenges.",
+    description: "Wellness Experiences you'll actually enjoy , thoughtfully  curated to support physical, mental and emotional well-being.",
     icon: Heart,
     color: "text-green-400",
     bg: "bg-green-400/10",
