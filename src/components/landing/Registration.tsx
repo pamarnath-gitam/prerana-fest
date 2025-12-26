@@ -79,12 +79,13 @@ export default function Registration() {
               <CardTitle>Fest Registration</CardTitle>
               <CardDescription>Register for the main event here.</CardDescription>
             </CardHeader>
-            <CardContent className="p-0 h-[600px]" id="fest-registration-frame">
+            <CardContent className="p-0 h-[800px] md:h-[1000px]" id="fest-registration-frame">
               <iframe 
                 src="https://lu.ma/embed/event/evt_placeholder" 
                 className="w-full h-full border-0"
                 title="Fest Registration"
                 allowFullScreen
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-presentation"
               ></iframe>
             </CardContent>
           </Card>

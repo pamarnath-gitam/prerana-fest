@@ -94,15 +94,15 @@ const domainTeams = [
 ];
 
 const advisoryCommittee = [
-  "Dr. Reema Chaudhury",
-  "Dr. Asha Acharya",
-  "Ayush BM",
-  "Anitha D",
-  "Meghana Musku",
-  "Pranav Amarnath",
-  "Arjun Raghu",
-  "Srikanth",
-  "Rayanka",
+  { name: "Dr. Reema Chaudhury", role: "Director, Campus Life" },
+  { name: "Dr. Asha Acharya", role: "Manager, Student Life" },
+  { name: "Anitha D", role: "Senior Executive" },
+  { name: "Arjun Raghu", role: "Senior Executive" },
+  { name: "Pranav Amarnath", role: "Senior Executive (Wellness)" },
+  { name: "Meghana Musku", role: "Senior Executive (Wellness)" },
+  { name: "Srikanth Basavraj", role: "Senior Executive" },
+  { name: "Rayanka Debnath", role: "Senior Executive" },
+  { name: "Ayush BM", role: "Senior Executive" },
 ];
 
 function getInitials(name: string) {
@@ -240,21 +240,55 @@ export default function Team() {
           <section className="space-y-12">
              <div className="text-center space-y-4">
                <h2 className="text-3xl font-bold text-secondary">Advisory Committee</h2>
-               <p className="text-muted-foreground text-lg">Faculty Support</p>
+               <p className="text-muted-foreground text-lg">Student Life Team</p>
                <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
             </div>
-            <div className="flex flex-wrap justify-center gap-6 max-w-6xl mx-auto">
-              {advisoryCommittee.map((member, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.4 + index * 0.05 }}
-                  className="bg-muted/10 border border-primary/10 rounded-xl px-8 py-4 text-center hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 cursor-default min-w-[200px]"
+            
+            <div className="flex flex-col items-center gap-10 max-w-6xl mx-auto">
+              {/* Director */}
+              {advisoryCommittee.filter(m => m.role.includes("Director")).map((member, index) => (
+                 <motion.div
+                  key={`director-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl px-16 py-10 text-center hover:border-primary/50 transition-all hover:scale-105 cursor-default min-w-[320px] flex flex-col justify-center items-center gap-3 shadow-lg shadow-primary/5"
                 >
-                  <span className="font-medium text-lg tracking-wide">{member}</span>
+                  <span className="font-bold text-2xl md:text-3xl tracking-wide text-foreground">{member.name}</span>
+                  <span className="text-lg md:text-xl text-primary font-bold uppercase tracking-wider">{member.role}</span>
                 </motion.div>
               ))}
+
+              {/* Manager */}
+              {advisoryCommittee.filter(m => m.role.includes("Manager")).map((member, index) => (
+                 <motion.div
+                  key={`manager-${index}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-card/50 backdrop-blur-sm border border-primary/20 rounded-xl px-12 py-8 text-center hover:border-primary/50 transition-all hover:scale-105 cursor-default min-w-[280px] flex flex-col justify-center items-center gap-2 shadow-md"
+                >
+                  <span className="font-bold text-xl md:text-2xl tracking-wide text-foreground">{member.name}</span>
+                  <span className="text-base md:text-lg text-primary/90 font-semibold uppercase tracking-wider">{member.role}</span>
+                </motion.div>
+              ))}
+
+              {/* Executives */}
+              <div className="flex flex-wrap justify-center gap-6 w-full pt-4">
+                {advisoryCommittee.filter(m => !m.role.includes("Director") && !m.role.includes("Manager")).map((member, index) => (
+                  <motion.div
+                    key={`exec-${index}`}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05 }}
+                    className="bg-muted/10 border border-primary/10 rounded-xl px-8 py-6 text-center hover:bg-primary/5 hover:border-primary/30 transition-all hover:scale-105 cursor-default min-w-[240px] flex flex-col justify-center items-center gap-2"
+                  >
+                    <span className="font-bold text-lg tracking-wide text-foreground">{member.name}</span>
+                    <span className="text-sm text-muted-foreground font-medium uppercase tracking-wider">{member.role}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </section>
 
