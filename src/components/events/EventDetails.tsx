@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, CheckCircle2, Clock, Layers, MapPin, Trophy, Users } from "lucide-react";
-import { useState } from "react";
 import { useNavigate } from "react-router";
 
 interface EventDetailsProps {
@@ -15,26 +11,24 @@ interface EventDetailsProps {
 
 export default function EventDetails({ event: selectedEvent, category }: EventDetailsProps) {
   const navigate = useNavigate();
-  const [agreed, setAgreed] = useState(false);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const handleRegister = () => {
     if (!selectedEvent) return;
 
-    switch (selectedEvent.category) {
-      case "Technical":
+    const cat = selectedEvent.category.toLowerCase();
+    switch (cat) {
+      case "technical":
         navigate("/register/technical");
         break;
-      case "Cultural":
+      case "cultural":
         navigate("/register/cultural");
         break;
-      case "Wellness":
+      case "wellness":
         navigate("/register/wellness");
         break;
       default:
         navigate("/register");
     }
-    setIsDialogOpen(false);
   };
 
   return (
@@ -67,116 +61,10 @@ export default function EventDetails({ event: selectedEvent, category }: EventDe
             <Button 
               size="lg" 
               className="text-lg px-8 shadow-lg shadow-primary/20"
-              onClick={() => setIsDialogOpen(true)}
+              onClick={handleRegister}
             >
               Register Now
             </Button>
-            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-              <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col">
-                <DialogHeader>
-                  <DialogTitle>Event Registration: {selectedEvent.title}</DialogTitle>
-                  <DialogDescription>
-                    Please review the rules and guidelines before proceeding.
-                  </DialogDescription>
-                </DialogHeader>
-                
-                <ScrollArea className="flex-1 pr-4 max-h-[60vh]">
-                  <div className="space-y-6 py-4">
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">About the Event</h4>
-                      <p className="text-sm text-muted-foreground">{selectedEvent.fullDescription}</p>
-                    </div>
-
-                    {selectedEvent.isCombo && selectedEvent.includedEvents && (
-                      <div className="bg-secondary/10 p-4 rounded-lg border border-secondary/20">
-                        <h4 className="font-semibold mb-2 text-secondary">Included Events</h4>
-                        <ul className="list-disc list-inside text-sm text-muted-foreground">
-                          {selectedEvent.includedEvents.map((ev: string, i: number) => (
-                            <li key={i}>{ev}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-muted/30 p-3 rounded-lg">
-                        <span className="text-xs text-muted-foreground block">Team Size</span>
-                        <span className="font-medium">{selectedEvent.teamSize}</span>
-                      </div>
-                      <div className="bg-muted/30 p-3 rounded-lg">
-                        <span className="text-xs text-muted-foreground block">Eligibility</span>
-                        <span className="font-medium">{selectedEvent.eligibility}</span>
-                      </div>
-                      {selectedEvent.timeLimit && (
-                        <div className="bg-muted/30 p-3 rounded-lg">
-                          <span className="text-xs text-muted-foreground block">Time Limit</span>
-                          <span className="font-medium">{selectedEvent.timeLimit}</span>
-                        </div>
-                      )}
-                      {selectedEvent.day && (
-                        <div className="bg-muted/30 p-3 rounded-lg">
-                          <span className="text-xs text-muted-foreground block">Day</span>
-                          <span className="font-medium">{selectedEvent.day}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">Guidelines</h4>
-                      <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                        {selectedEvent.guidelines.map((g: string, i: number) => (
-                          <li key={i}>{g}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {selectedEvent.judgingCriteria.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold mb-2 text-primary">Judging Criteria</h4>
-                        <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                          {selectedEvent.judgingCriteria.map((j: string, i: number) => (
-                            <li key={i}>{j}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {selectedEvent.disqualificationRules.length > 0 && (
-                      <div>
-                        <h4 className="font-semibold mb-2 text-destructive">Disqualification Rules</h4>
-                        <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                          {selectedEvent.disqualificationRules.map((d: string, i: number) => (
-                            <li key={i}>{d}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                </ScrollArea>
-
-                <div className="border-t border-border pt-4 mt-4">
-                  <div className="flex items-start space-x-2 mb-6">
-                    <Checkbox 
-                      id="terms" 
-                      checked={agreed} 
-                      onCheckedChange={(checked) => setAgreed(checked as boolean)} 
-                    />
-                    <label
-                      htmlFor="terms"
-                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-muted-foreground"
-                    >
-                      I have read and understood all the rules and regulations of this {selectedEvent.isCombo ? "combo" : "cultural"} event and agree to abide by the decisions of the judges.
-                    </label>
-                  </div>
-                  <DialogFooter>
-                    <Button variant="outline" onClick={() => setIsDialogOpen(false)}>Cancel</Button>
-                    <Button onClick={handleRegister} disabled={!agreed}>
-                      Proceed to {selectedEvent.requiresPayment ? "Payment" : "Registration"}
-                    </Button>
-                  </DialogFooter>
-                </div>
-              </DialogContent>
-            </Dialog>
           </div>
         </div>
 
