@@ -115,6 +115,64 @@ function getInitials(name: string) {
 }
 
 export default function Team() {
+  // Helper to flatten members by role
+  const getMembersByRole = (roleTitle: string) => {
+    const members: Array<{ name: string; image?: string; domain: string }> = [];
+    domainTeams.forEach((team) => {
+      const role = team.roles.find((r) => r.title === roleTitle);
+      if (role && role.members) {
+        role.members.forEach((member) => {
+          members.push({ ...member, domain: team.name });
+        });
+      }
+    });
+    return members;
+  };
+
+  const heads = getMembersByRole("Head");
+  const leads = getMembersByRole("Lead");
+  const coLeads = getMembersByRole("Co-Lead");
+
+  const renderMemberSection = (title: string, members: Array<{ name: string; image?: string; domain: string }>) => (
+    <section className="space-y-12">
+      <div className="text-center space-y-4">
+        <h2 className="text-3xl font-bold text-secondary">{title}</h2>
+        <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4">
+        {members.map((member, index) => (
+          <motion.div
+            key={`${title}-${index}`}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.05 }}
+            className="h-full"
+          >
+            <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col justify-center items-center py-8 px-4 w-full group">
+              <CardHeader className="text-center p-0 space-y-4 w-full flex flex-col items-center">
+                <Avatar className="w-24 h-24 border-4 border-primary/10 shadow-xl shadow-primary/5 group-hover:border-primary/30 transition-colors">
+                  <AvatarImage src={member.image} alt={member.name} className="object-cover object-top" />
+                  <AvatarFallback className="bg-primary/5 text-primary text-xl font-bold">
+                    {getInitials(member.name)}
+                  </AvatarFallback>
+                </Avatar>
+                <div className="space-y-1">
+                  <CardTitle className="text-lg font-bold tracking-tight whitespace-nowrap overflow-hidden text-ellipsis px-2 w-full">
+                    {member.name}
+                  </CardTitle>
+                  <p className="text-sm text-primary font-medium tracking-wide uppercase">
+                    {member.domain}
+                  </p>
+                </div>
+              </CardHeader>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30 flex flex-col">
       <Navbar />
@@ -172,69 +230,10 @@ export default function Team() {
             </div>
           </section>
 
-          {/* Domain Teams Section */}
-          <section className="space-y-16">
-            <div className="text-center space-y-4">
-               <h2 className="text-3xl font-bold text-secondary">Domain Teams</h2>
-               <div className="w-24 h-1 bg-secondary/50 mx-auto rounded-full" />
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-4">
-              {domainTeams.map((team, index) => {
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 + index * 0.05 }}
-                    className="h-full"
-                  >
-                    <Card className="bg-card/50 backdrop-blur-sm border-primary/20 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 h-full flex flex-col">
-                      <CardHeader className="pb-6 border-b border-primary/10 bg-primary/5">
-                        <CardTitle className="text-2xl text-primary text-center font-bold tracking-tight">{team.name}</CardTitle>
-                      </CardHeader>
-                      <CardContent className="pt-8 space-y-8 flex-1">
-                        {team.roles.map((role, rIndex) => {
-                          return (
-                            <div key={rIndex} className="space-y-3 text-center">
-                              <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] border-b border-border/50 pb-1 inline-block px-4">
-                                {role.title}
-                              </h4>
-                              <div className="flex flex-wrap justify-center gap-4">
-                                {role.members.length > 0 ? (
-                                  role.members.map((member, mIndex) => (
-                                    <div key={mIndex} className="flex flex-col items-center gap-3 w-full max-w-[200px] group">
-                                      <Avatar className="w-32 h-32 border-4 border-primary/10 group-hover:border-primary/30 transition-colors shadow-md">
-                                        <AvatarImage src={(member as any).image} alt={member.name} className="object-cover object-top" />
-                                        <AvatarFallback className="bg-primary/5 text-primary text-2xl font-semibold">
-                                          {getInitials(member.name)}
-                                        </AvatarFallback>
-                                      </Avatar>
-                                      <div className="w-full px-3 py-2 bg-background/50 rounded-lg border border-primary/10 group-hover:border-primary/30 transition-colors shadow-sm text-center">
-                                        <span className="text-sm font-medium text-foreground/90 block truncate">{member.name}</span>
-                                      </div>
-                                    </div>
-                                  ))
-                                ) : (
-                                  <div className="flex flex-col items-center gap-3 w-full max-w-[200px] opacity-50">
-                                    <div className="w-32 h-32 rounded-full bg-muted/10 border-4 border-dashed border-muted-foreground/20 flex items-center justify-center">
-                                      <span className="text-xs text-muted-foreground/50">Photo</span>
-                                    </div>
-                                    <div className="w-full px-3 py-2 bg-muted/10 rounded-lg border border-dashed border-muted-foreground/20 text-center">
-                                      <span className="text-sm text-muted-foreground/50 italic">TBA</span>
-                                    </div>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </section>
+          {/* Domain Teams Sections - Reordered by Hierarchy */}
+          {renderMemberSection("Heads", heads)}
+          {renderMemberSection("Leads", leads)}
+          {renderMemberSection("Co-Leads", coLeads)}
 
           {/* Advisory Committee Section */}
           <section className="space-y-12">
